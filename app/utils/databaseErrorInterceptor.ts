@@ -109,7 +109,7 @@ export const staticFallbackData = {
 
 // Error interceptor for console errors
 const originalConsoleError = console.error;
-console.error = function(...args: any[]) {
+console.error = function(...args: unknown[]) {
   const message = args.join(' ');
   
   // Block PGRST205 errors from appearing in console

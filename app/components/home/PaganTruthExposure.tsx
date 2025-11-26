@@ -96,7 +96,7 @@ export function PaganTruthExposure() {
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 mb-3">
                       <BookOpen className="w-5 h-5 text-primary" />
-                      <h4 className="font-semibold text-primary">The LORD's Feasts Only</h4>
+                      <h4 className="font-semibold text-primary">The LORD&#39;s Feasts Only</h4>
                     </div>
                     <div className="bg-muted/30 p-4 rounded-lg border-l-4 border-primary">
                       <p className="text-sm text-muted-foreground mb-2 font-mono">Leviticus 23:1-2</p>

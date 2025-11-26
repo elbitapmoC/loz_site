@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { projectId, publicAnonKey } from './info';
-import { emergencyApiClient, emergencyStaticData } from '../emergencyFix';
+import { emergencyStaticData } from '../emergencyFix';
 
 // Initialize Supabase client
 const supabaseUrl = `https://${projectId}.supabase.co`;
@@ -27,7 +27,7 @@ export const apiClient = {
       }
       
       return data || emergencyStaticData.locations;
-    } catch (error) {
+    } catch {
       console.log('🛡️ Database error - falling back to emergency static locations');
       return emergencyStaticData.locations;
     }
@@ -52,7 +52,7 @@ export const apiClient = {
       }
       
       return data || emergencyStaticData.tribes;
-    } catch (error) {
+    } catch {
       console.log('🛡️ Database error - falling back to emergency static tribes');
       return emergencyStaticData.tribes;
     }
@@ -77,7 +77,7 @@ export const apiClient = {
       }
       
       return data || emergencyStaticData.calendar_events;
-    } catch (error) {
+    } catch {
       console.log('🛡️ Database error - falling back to emergency static calendar events');
       return emergencyStaticData.calendar_events;
     }
@@ -105,7 +105,7 @@ export const apiClient = {
       }
       
       return data || [];
-    } catch (error) {
+    } catch {
       console.log('🛡️ Database error - using static events for date range');
       return emergencyStaticData.calendar_events.filter(event => 
         event.date >= startDate && event.date <= endDate
@@ -134,7 +134,7 @@ export const apiClient = {
       }
       
       return data || [];
-    } catch (error) {
+    } catch {
       console.log('🛡️ Database error - using static events by type');
       return emergencyStaticData.calendar_events.filter(event => 
         event.event_type === eventType
@@ -166,7 +166,7 @@ export const apiClient = {
       }
       
       return data || [];
-    } catch (error) {
+    } catch {
       console.log('🛡️ Database error - using static upcoming events');
       return emergencyStaticData.calendar_events
         .filter(event => event.date >= today)

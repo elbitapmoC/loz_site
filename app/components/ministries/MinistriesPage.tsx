@@ -2,10 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
 import { VisualHierarchyText } from "../layout/VisualHierarchyText";
-import { PageHeader } from "../layout/PageHeader";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import {
   Heart,
@@ -14,11 +11,11 @@ import {
   Shield,
   DollarSign,
   Home,
-  Search,
+  
   Handshake,
-  Phone,
+  
   Mail,
-  MapPin,
+  
   Clock,
 } from "lucide-react";
 

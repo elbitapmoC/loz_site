@@ -150,7 +150,7 @@ export function SacredResourcesHub() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium mb-8 shadow-lg"
           >
             <Download className="w-5 h-5" />
-            Free Sacred Resources
+            Free Resources
           </motion.div>
           
           <motion.h2
@@ -159,7 +159,7 @@ export function SacredResourcesHub() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Sacred Resources Hub
+            Resources Hub
           </motion.h2>
           
           <motion.p

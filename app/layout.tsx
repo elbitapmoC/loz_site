@@ -1,4 +1,5 @@
 import React from 'react'
+import { MotionConfig } from 'motion/react'
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -8,12 +9,12 @@ import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Lions of Zion',
+  title: 'Thee Light of Zion',
   description: 'A spiritual community dedicated to learning and living biblical truth',
-  keywords: ['Lions of Zion', 'biblical truth', 'twelve tribes', 'spiritual community'],
-  authors: [{ name: 'Lions of Zion' }],
-  creator: 'Lions of Zion',
-  publisher: 'Lions of Zion',
+  keywords: ['Thee Light of Zion', 'biblical truth', 'twelve tribes', 'spiritual community'],
+  authors: [{ name: 'Ahkal' }],
+  creator: 'Yah',
+  publisher: 'Thee Light of Zion',
   formatDetection: {
     email: false,
     address: false,
@@ -35,14 +36,16 @@ export default function RootLayout({
   const content = (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider defaultTheme="light">
-          <FontProvider>
-            <AuthProvider>
-              {children}
-              <Toaster />
-            </AuthProvider>
-          </FontProvider>
-        </ThemeProvider>
+        <MotionConfig reducedMotion="user">
+          <ThemeProvider defaultTheme="light">
+            <FontProvider>
+              <AuthProvider>
+                {children}
+                <Toaster />
+              </AuthProvider>
+            </FontProvider>
+          </ThemeProvider>
+        </MotionConfig>
       </body>
     </html>
   )

@@ -1,9 +1,43 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../utils/supabase/client';
 
+type CalendarEvent = {
+  id: string;
+  title: string;
+  description?: string;
+  date: string; // YYYY-MM-DD
+  event_type: string;
+  location_type?: string;
+};
+
+type Location = {
+  id: string;
+  name: string;
+  short_name?: string;
+  address: string;
+  city: string;
+  state: string;
+  zip_code: string;
+};
+
+type Tribe = {
+  id: string;
+  name: string;
+  modern_identity?: string;
+  order_number?: number;
+};
+
+function getErrorMessage(err: unknown): string {
+  if (err && typeof err === 'object' && 'message' in err) {
+    const msg = (err as { message?: string }).message;
+    return msg || 'Unknown error';
+  }
+  return 'Unknown error';
+}
+
 // Hook for calendar events from Supabase
 export function useSupabaseCalendarData() {
-  const [allEvents, setAllEvents] = useState<any[]>([]);
+  const [allEvents, setAllEvents] = useState<CalendarEvent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,10 +50,10 @@ export function useSupabaseCalendarData() {
         
         const events = await apiClient.getCalendarEvents();
         console.log('✅ Calendar events loaded:', events.length);
-        setAllEvents(events || []);
-      } catch (err: any) {
+        setAllEvents((events || []) as CalendarEvent[]);
+      } catch (err: unknown) {
         console.error('❌ Error fetching calendar events:', err);
-        setError(err?.message || 'Failed to load calendar events');
+        setError(getErrorMessage(err) || 'Failed to load calendar events');
         setAllEvents([]);
       } finally {
         setIsLoading(false);
@@ -38,7 +72,7 @@ export function useSupabaseCalendarData() {
 
 // Hook for locations from Supabase
 export function useSupabaseLocations() {
-  const [locations, setLocations] = useState<any[]>([]);
+  const [locations, setLocations] = useState<Location[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -51,10 +85,10 @@ export function useSupabaseLocations() {
         
         const data = await apiClient.getLocations();
         console.log('✅ Locations loaded:', data.length);
-        setLocations(data || []);
-      } catch (err: any) {
+        setLocations((data || []) as Location[]);
+      } catch (err: unknown) {
         console.error('❌ Error fetching locations:', err);
-        setError(err?.message || 'Failed to load locations');
+        setError(getErrorMessage(err) || 'Failed to load locations');
         setLocations([]);
       } finally {
         setIsLoading(false);
@@ -73,7 +107,7 @@ export function useSupabaseLocations() {
 
 // Hook for tribes from Supabase
 export function useSupabaseTribes() {
-  const [tribes, setTribes] = useState<any[]>([]);
+  const [tribes, setTribes] = useState<Tribe[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -86,10 +120,10 @@ export function useSupabaseTribes() {
         
         const data = await apiClient.getTribes();
         console.log('✅ Tribes loaded:', data.length);
-        setTribes(data || []);
-      } catch (err: any) {
+        setTribes((data || []) as Tribe[]);
+      } catch (err: unknown) {
         console.error('❌ Error fetching tribes:', err);
-        setError(err?.message || 'Failed to load tribes');
+        setError(getErrorMessage(err) || 'Failed to load tribes');
         setTribes([]);
       } finally {
         setIsLoading(false);
@@ -108,7 +142,7 @@ export function useSupabaseTribes() {
 
 // Hook for upcoming events
 export function useUpcomingEvents(limit = 5) {
-  const [events, setEvents] = useState<any[]>([]);
+  const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -121,10 +155,10 @@ export function useUpcomingEvents(limit = 5) {
         
         const data = await apiClient.getUpcomingEvents(limit);
         console.log('✅ Upcoming events loaded:', data.length);
-        setEvents(data || []);
-      } catch (err: any) {
+        setEvents((data || []) as CalendarEvent[]);
+      } catch (err: unknown) {
         console.error('❌ Error fetching upcoming events:', err);
-        setError(err?.message || 'Failed to load upcoming events');
+        setError(getErrorMessage(err) || 'Failed to load upcoming events');
         setEvents([]);
       } finally {
         setIsLoading(false);

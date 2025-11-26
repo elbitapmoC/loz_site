@@ -62,7 +62,7 @@ export function ComingSoonPage({ title }: ComingSoonPageProps) {
               {/* Headquarters Badge */}
               <div className="absolute top-4 right-4 z-20">
                 <Badge className="bg-amber-500 dark:bg-amber-400 text-amber-950 shadow-lg">
-                  Headquarters
+                  HQ
                 </Badge>
               </div>
 

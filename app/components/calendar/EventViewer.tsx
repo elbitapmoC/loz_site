@@ -1,10 +1,25 @@
+"use client";
 import React from "react";
 import { Card } from "../ui/card";
-import { CalendarEvent, eventTypeColors, eventTypeIcons } from "./CalendarDashboard";
+import { eventTypeColors } from "./CalendarDashboard";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { Play, Calendar, MapPin, Star } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { motion } from "framer-motion";
+
+type EventType = "new-moon" | "holy-day" | "fast" | "sabbath" | "setup";
+
+interface CalendarEvent {
+  id: string;
+  title: string;
+  date: string;
+  type: EventType;
+  description?: string;
+  location?: string;
+  fastingPeriod?: string;
+  videoUrl?: string;
+  scriptures?: string[];
+}
 
 interface EventViewerProps {
   event: CalendarEvent | null;
@@ -40,8 +55,10 @@ export function EventViewer({ event }: EventViewerProps) {
     });
   };
 
-  const typeColorClass = eventTypeColors[event.type];
-  const typeIcon = eventTypeIcons[event.type];
+  const config =
+    eventTypeColors[event.type as keyof typeof eventTypeColors] ||
+    eventTypeColors["sabbath"];
+  const Icon = config.icon;
 
   return (
     <motion.div
@@ -56,9 +73,9 @@ export function EventViewer({ event }: EventViewerProps) {
               <h3 className="text-lg font-semibold">Event Preview</h3>
               <p className="text-sm text-muted-foreground">{formatDate(event.date)}</p>
             </div>
-            <Badge className={`${typeColorClass} px-3 py-1`}>
+            <Badge className={`${config.bg} ${config.text} border ${config.border} px-3 py-1`}>
               <span className="flex items-center gap-2">
-                {typeIcon}
+                <Icon className="h-4 w-4" />
                 {event.type === 'new-moon' ? 'New Moon' : 
                  event.type === 'holy-day' ? 'Holy Day' : 
                  event.type === 'fast' ? 'Fast Day' : 'Sabbath'}

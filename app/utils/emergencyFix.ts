@@ -6,7 +6,7 @@ export const mockSupabaseClient = {
   from: (table: string) => ({
     select: () => ({
       order: () => ({
-        then: (callback: (result: any) => void) => {
+        then: (callback: (result: unknown) => void) => {
           console.log(`🚫 Blocked Supabase call to table: ${table}`);
           callback({ data: [], error: null });
           return Promise.resolve({ data: [], error: null });

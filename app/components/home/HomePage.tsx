@@ -1,8 +1,8 @@
 import React from "react";
 import { HeroSection } from "./HeroSection";
-import { PaganTruthExposure } from "./PaganTruthExposure";
 import { CallToAction } from "./CallToAction";
 import { RollingQuotes } from "./RollingQuotes";
+import { RevealOnScroll } from "@/components/layout/RevealOnScroll";
 // import { useTheme } from "@/components/providers/ThemeProvider";
 
 export function HomePage() {
@@ -40,10 +40,14 @@ export function HomePage() {
         buttonLayout="centered"
       />
       {/* Bible Verse Scrolling Section */}
-      <RollingQuotes quotes={verses} />
+      <RevealOnScroll direction="up" distance={24} threshold={0.25} triggerOffset={120}>
+        <RollingQuotes quotes={verses} />
+      </RevealOnScroll>
 
       {/* Call To Action */}
-      <CallToAction />
+      <RevealOnScroll direction="up" distance={24} threshold={0.25} triggerOffset={160}>
+        <CallToAction />
+      </RevealOnScroll>
     </main>
   );
 }

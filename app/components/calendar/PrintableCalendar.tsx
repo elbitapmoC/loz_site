@@ -76,7 +76,7 @@ export function PrintableCalendar({ events }: PrintableCalendarProps) {
     <div className="print-only" style={{ display: "none" }}>
       <div className="print-header">
         <h1 className="text-2xl font-bold mb-2">THEE LIGHT OF ZION</h1>
-        <h2 className="text-xl mb-6">Sacred Calendar 2025-2026</h2>
+        <h2 className="text-xl mb-6">HHD Calendar 2025-2026</h2>
         <p className="mb-2 text-muted-foreground italic">
           "So teach us to number the days, that we may apply our hearts unto wisdom."
         </p>

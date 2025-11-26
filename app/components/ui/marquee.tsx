@@ -25,7 +25,6 @@ export function Marquee({
     if (!containerRef.current || !scrollerRef.current) return;
 
     const scroller = scrollerRef.current;
-    const container = containerRef.current;
 
     // Clone the content for seamless scrolling
     const scrollerContent = Array.from(scroller.children);

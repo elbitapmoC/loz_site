@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
@@ -120,17 +121,17 @@ export function AboutPage() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <Button size="lg" className="px-8">
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Learn More
+                <Button asChild size="lg" className="px-8">
+                  <Link href="#mission">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    Learn More
+                  </Link>
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-8"
-                >
-                  <Users className="mr-2 h-4 w-4" />
-                  Join Us
+                <Button asChild variant="outline" size="lg" className="px-8">
+                  <Link href="/locations">
+                    <Users className="mr-2 h-4 w-4" />
+                    Join Us
+                  </Link>
                 </Button>
               </div>
             </motion.div>
@@ -143,7 +144,7 @@ export function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-white dark:bg-muted/50">
+      <section id="mission" className="py-16 bg-white dark:bg-muted/50">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -450,20 +451,14 @@ export function AboutPage() {
               with us in righteousness and truth.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="px-8"
-              >
-                Visit Our Services
+              <Button asChild size="lg" variant="secondary" className="px-8">
+                <Link href="/ministries">Visit Our Services</Link>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-8 border-white/20 text-white bg-white/10"
-              >
-                <Users className="mr-2 h-4 w-4" />
-                Contact Us
+              <Button asChild variant="outline" size="lg" className="px-8 border-white/20 text-white bg-white/10">
+                <Link href="/contact">
+                  <Users className="mr-2 h-4 w-4" />
+                  Contact Us
+                </Link>
               </Button>
             </div>
           </motion.div>

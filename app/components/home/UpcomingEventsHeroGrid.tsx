@@ -114,7 +114,7 @@ export function UpcomingEventsHeroGrid() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium mb-6">
             <Bell className="w-4 h-4" />
-            Upcoming Sacred Gatherings
+            Upcoming Gatherings
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Join Our Community

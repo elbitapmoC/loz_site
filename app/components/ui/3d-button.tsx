@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useTheme } from "@/components/providers/ThemeProvider";
 
 const buttonVariants = cva(
-  "relative inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 theme-aware",
+  "relative inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 cursor-pointer disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 theme-aware",
   {
     variants: {
       variant: {

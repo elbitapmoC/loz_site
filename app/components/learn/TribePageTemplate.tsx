@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "../ui/card";
+//
 import { Badge } from "../ui/badge";
 import { VisualHierarchyText } from "../layout/VisualHierarchyText";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { BookshelfLibrary } from "./BookshelfLibrary";
 import Link from "next/link";
 import { LucideIcon, ArrowLeft, ArrowRight, Crown, Shield, Heart, Users, Calendar, MapPin } from "lucide-react";
-import { abbreviateScripture } from "../../utils/scriptureAbbreviations";
+//
 
 // Type definitions for the tribe data structure
 export interface HeroCharacteristic {
@@ -105,14 +105,7 @@ interface TribePageTemplateProps {
 export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
   const {
     tribeName,
-    hebrewName,
-    hebrewTransliteration,
-    meaning,
     modernIdentity,
-    badgeText,
-    heroDescription,
-    heroCharacteristics,
-    historicalConnection,
     modernPeopleTitle,
     modernDescription,
     migrationYear,
@@ -163,7 +156,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
                   אָשֵׁר
                 </div>
                 <div className="text-lg text-muted-foreground italic">
-                  Asher - "Happy"
+                  Asher - &quot;Happy&quot;
                 </div>
                 <div className="text-lg font-semibold text-primary mt-2">
                   Present Day: South Americans
@@ -171,7 +164,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
               </div>
 
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                The eighth-born son of Jacob by Zilpah (Leah's maid), whose descendants migrated to the Americas around 536 B.C. during the Persian captivity. Known in the Middle Ages as the Incas, they inhabited Colombia, Brazil, Peru, Venezuela, Guyana, Paraguay, Uruguay, and Ecuador, dwelling in lands rich with oil, minerals, and agricultural abundance.
+                The eighth-born son of Jacob by Zilpah (Leah&#39;s maid), whose descendants migrated to the Americas around 536 B.C. during the Persian captivity. Known in the Middle Ages as the Incas, they inhabited Colombia, Brazil, Peru, Venezuela, Guyana, Paraguay, Uruguay, and Ecuador, dwelling in lands rich with oil, minerals, and agricultural abundance.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -209,7 +202,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
                   <span className="block mb-1">
                     🏺 Biblical Prophecy Fulfilled:
                   </span>
-                  "Out of Asher his bread shall be fat, and he shall yield royal dainties" - Genesis 49:20. South America produces the world's biggest supply of cattle, coffee, cocoa, sugar, rice, and fruits - "fat bread" of abundance. They "yield royal dainties" through famous Carnival-Mardi Gras festivals with exquisite foods and clothing. "Let him dip his foot in oil" (Deuteronomy 33:24) - Colombia has the largest crude oil output in the Americas. "Thy shoes shall be iron and brass" - they stand on vast mineral resources, with Brazil (Ba-ra-zal = Hebrew for iron) being rich in iron, brass, chromium, nickel, tin, and copper.
+                  &quot;Out of Asher his bread shall be fat, and he shall yield royal dainties&quot; - Genesis 49:20. South America produces the world&#39;s biggest supply of cattle, coffee, cocoa, sugar, rice, and fruits - &quot;fat bread&quot; of abundance. They &quot;yield royal dainties&quot; through famous Carnival-Mardi Gras festivals with exquisite foods and clothing. &quot;Let him dip his foot in oil&quot; (Deuteronomy 33:24) - Colombia has the largest crude oil output in the Americas. &quot;Thy shoes shall be iron and brass&quot; - they stand on vast mineral resources, with Brazil (Ba-ra-zal = Hebrew for iron) being rich in iron, brass, chromium, nickel, tin, and copper.
                 </p>
               </div>
             </motion.div>
@@ -294,7 +287,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
                 {tribeName} • Hebrew Heritage
               </Badge>
               <p className="text-muted-foreground leading-relaxed">
-                {tribeName} was one of Jacob's sons, making you part of
+                {tribeName} was one of Jacob&#39;s sons, making you part of
                 an ancient covenant family that stretches back
                 thousands of years to the patriarchs.
               </p>
@@ -402,13 +395,13 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <Badge className="bg-primary/90 text-white border-0 mb-3">
-                  {tribeName}'s Descendants
+                  {tribeName}&apos;s Descendants
                 </Badge>
                 <h3 className="text-white font-semibold text-2xl mb-2">
                   {modernPeopleTitle}
                 </h3>
                 <p className="text-white/90">
-                  Living heritage from Jacob's son in their modern homeland
+                  Living heritage from Jacob&#39;s son in their modern homeland
                 </p>
               </div>
             </motion.div>
@@ -425,13 +418,13 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
               >
                 <Crown className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="font-semibold text-lg mb-2">
-                  Jacob's Blessing
+                  Jacob&#39;s Blessing
                 </h3>
                 <Badge className="bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-700 mb-3">
                   {jacobsBlessingReference}
                 </Badge>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  "{jacobsBlessing}"
+                  {jacobsBlessing}
                 </p>
               </motion.div>
 
@@ -453,7 +446,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
                     Tribal Leadership
                   </Badge>
                   <p className="text-white text-sm font-medium">
-                    Strength and dignity of {tribeName}'s descendants
+                    Strength and dignity of {tribeName}&apos;s descendants
                   </p>
                 </div>
               </motion.div>
@@ -481,7 +474,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
                       {territory}
                     </h3>
                     <p className="text-white/90 text-sm leading-relaxed">
-                      Like their biblical ancestors, {tribeName}'s descendants
+                      Like their biblical ancestors, {tribeName}&apos;s descendants
                       found their inheritance in this territory - their
                       unconquered refuge.
                     </p>
@@ -582,7 +575,7 @@ export function TribePageTemplate({ tribeData }: TribePageTemplateProps) {
 
             <div className="flex flex-wrap justify-center gap-4 text-white dark:text-black">
               <Link
-                href="/learn/12-tribes"
+                href="/learn/twelve-tribes"
                 className="group inline-flex items-center bg-black/10 hover:bg-black/20 transition-colors px-6 py-3 rounded-lg font-medium"
               >
                 <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />

@@ -147,7 +147,7 @@ export function UpcomingEventsGradientStack() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground text-sm font-medium mb-8 shadow-lg"
           >
             <Sparkles className="w-4 h-4" />
-            Sacred Gatherings Await
+            Gatherings Await
             <Sparkles className="w-4 h-4" />
           </motion.div>
           
@@ -313,7 +313,7 @@ export function UpcomingEventsGradientStack() {
               size="lg" 
               className="px-8 py-4 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
             >
-              Explore All Sacred Events
+              Explore All Events
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

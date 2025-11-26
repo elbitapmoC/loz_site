@@ -108,7 +108,7 @@ export function PrivacyPolicy() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Children's Privacy</CardTitle>
+              <CardTitle>Children&#39;s Privacy</CardTitle>
             </CardHeader>
             <CardContent className="prose prose-slate dark:prose-invert max-w-none">
               <p>
@@ -125,7 +125,7 @@ export function PrivacyPolicy() {
             <CardContent className="prose prose-slate dark:prose-invert max-w-none">
               <p>
                 We may update this privacy policy from time to time. We will notify you of any changes 
-                by posting the new privacy policy on this page and updating the "last updated" date.
+                by posting the new privacy policy on this page and updating the &quot;last updated&quot; date.
               </p>
             </CardContent>
           </Card>

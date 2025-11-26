@@ -3,10 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../ui/utils";
-import { ModeToggle } from "./ModeToggle";
-import { LiquidButton } from "./LiquidButton";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { useAuth } from "../auth/AuthContext";
 import { Dock } from "../ui/dock";
@@ -17,53 +15,28 @@ import {
   Heart,
   Calendar,
   Music,
-  Book,
   MapPin,
   Users,
   ScrollText,
-  Sparkles,
   ChevronDown,
   Home,
   Info,
   Headphones,
-  MapPin as MapPinIcon,
-  Gift,
   Mail,
-  FileText,
-  Search,
-  Settings,
-  PenTool,
-  Compass,
   ChevronRight,
-  ArrowRight,
   Bookmark,
   BookOpen,
-  Church,
   ListTree,
-  School,
   UserPlus,
-  CircleHelp,
   FileText as FileTextIcon,
   // Social media icons
   Instagram,
   Facebook,
   Youtube,
   Twitter,
-  Send,
   Moon,
-  LogOut,
-  User,
-  DollarSign,
 } from "lucide-react";
-import { Button } from "../ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+// Removed unused Button and DropdownMenu imports
 
 interface NavigationProps {
   className?: string;
@@ -215,8 +188,8 @@ const mobileMenuCategories = [
 
 export function Navigation({ className }: NavigationProps) {
   const pathname = usePathname();
-  const { isDark, setTheme, resolvedTheme } = useTheme();
-  const { user, signOut } = useAuth();
+  const { isDark, setTheme } = useTheme();
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState<
@@ -234,6 +207,7 @@ export function Navigation({ className }: NavigationProps) {
     .join(" ")
     .trim();
   const displayName = unsafeName || (nameFromProfile ? nameFromProfile : undefined) || user?.username || emailHandle || "Account";
+  void displayName;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -361,8 +335,26 @@ export function Navigation({ className }: NavigationProps) {
                           "text-foreground/80 hover:text-foreground hover:bg-foreground/5",
                         )}
                       >
-                        <span className="relative z-10">
+                        <span className="relative z-10 inline-flex items-center gap-1">
                           {link.name}
+                          <span className="inline-flex items-center justify-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="opacity-70"
+                            >
+                              <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                              <path d="M15 3h6v6" />
+                              <path d="M10 14L21 3" />
+                            </svg>
+                          </span>
                         </span>
                       </a>
                     );
@@ -390,58 +382,6 @@ export function Navigation({ className }: NavigationProps) {
                     </Link>
                   );
                 })}
-              </div>
-
-              <div className="flex items-center space-x-3 pl-2 border-l border-border">
-                <ModeToggle />
-
-                {user ? (
-                  <>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="hidden lg:flex items-center gap-2"
-                        >
-                          <User className="h-4 w-4" />
-                          <span className="max-w-[100px] truncate">
-                            {displayName}
-                          </span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent
-                        align="end"
-                        className="w-56"
-                      >
-                        <DropdownMenuLabel>
-                          My Account
-                        </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem
-                          onClick={() => signOut()}
-                          className="text-red-600 dark:text-red-400 cursor-pointer"
-                        >
-                          <LogOut className="mr-2 h-4 w-4" />
-                          Sign Out
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </>
-                ) : (
-                  <>
-                    <Link href="/signin">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="hidden lg:flex"
-                      >
-                        Sign In
-                      </Button>
-                    </Link>
-                  </>
-                )}
               </div>
             </nav>
           </div>
@@ -668,7 +608,7 @@ export function Navigation({ className }: NavigationProps) {
 
             <div className="space-y-4">
               <div className="p-4 border rounded-lg bg-card/80">
-                <p className="font-medium mb-1">Headquarters</p>
+                <p className="font-medium mb-1">HQ</p>
                 <p className="text-sm text-muted-foreground">
                   2937 W Broward Blvd,
                   <br />

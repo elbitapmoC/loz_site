@@ -75,6 +75,7 @@ export function VisualHierarchyText({
 }: VisualHierarchyTextProps) {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
+  const primaryColorClass = isDark ? "text-foreground/80" : "text-foreground";
 
   // Size classes
   const sizeClasses = {
@@ -133,7 +134,7 @@ export function VisualHierarchyText({
         {/* Primary text (Discover Your Heritage) */}
         <div
           className={cn(
-            "text-foreground/80",
+            primaryColorClass,
             sizeClasses[size].primary,
             animation
               ? "animate-in fade-in slide-in-from-bottom-1 duration-500 fill-mode-both"

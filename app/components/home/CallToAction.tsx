@@ -15,7 +15,7 @@ export function CallToAction() {
       </div>
       
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid sm:grid-cols-2 gap-12 items-center">
           {/* Main CTA Content */}
           <div className="space-y-8">
             <div className="space-y-6">

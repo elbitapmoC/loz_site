@@ -463,9 +463,9 @@ export function RepentancePage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-2xl mx-auto mb-8">
               <Quote className="h-8 w-8 mx-auto mb-4 opacity-80" />
               <p className="italic text-lg opacity-90">
-                "Everything begins with Christ and will end when
+                &quot;Everything begins with Christ and will end when
                 Christ returns, which is the restoration of the
-                nation of Israel, who are the elect of God."
+                nation of Israel, who are the elect of God.&quot;
               </p>
             </div>
 

@@ -15,7 +15,7 @@ export default function WelcomeBookletPage() {
           />
           <div className="text-center py-16">
             <p className="text-lg text-muted-foreground">
-              We're working on bringing you comprehensive welcome materials. 
+              We&#39;re working on bringing you comprehensive welcome materials. 
               In the meantime, feel free to explore our other resources.
             </p>
           </div>

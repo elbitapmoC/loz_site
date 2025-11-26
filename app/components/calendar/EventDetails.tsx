@@ -1,9 +1,25 @@
+"use client";
 import React from "react";
-import { CalendarEvent, eventTypeColors, eventTypeIcons } from "./CalendarDashboard";
+import { eventTypeColors } from "./CalendarDashboard";
 import { Home, Book, ExternalLink, Calendar, MapPin, Clock } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { CustomScrollArea } from "../ui/custom-scroll-area";
 import { motion } from "framer-motion";
+
+type EventType = "new-moon" | "holy-day" | "fast" | "sabbath" | "setup";
+
+interface CalendarEvent {
+  id: string;
+  title: string;
+  date: string;
+  type: EventType;
+  description?: string;
+  location?: string;
+  time?: string;
+  fastingPeriod?: string;
+  videoUrl?: string;
+  scriptures?: string[];
+}
 
 interface EventDetailsProps {
   event: CalendarEvent | null;
@@ -30,9 +46,11 @@ export function EventDetails({ event, showScriptures, onToggleView }: EventDetai
     );
   }
 
-  // Get event type color
-  const typeColorClass = eventTypeColors[event.type] || "bg-slate-100 text-slate-700 border-slate-200";
-  const typeIcon = eventTypeIcons[event.type];
+  // Get event type configuration
+  const config =
+    eventTypeColors[event.type as keyof typeof eventTypeColors] ||
+    eventTypeColors["sabbath"];
+  const Icon = config.icon;
 
   return (
     <motion.div
@@ -89,9 +107,9 @@ export function EventDetails({ event, showScriptures, onToggleView }: EventDetai
                 className="space-y-6"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Badge className={`${typeColorClass} px-3 py-1`}>
+                  <Badge className={`${config.bg} ${config.text} border ${config.border} px-3 py-1`}>
                     <span className="flex items-center gap-2">
-                      {typeIcon}
+                      <Icon className="h-4 w-4" />
                       {event.type === 'new-moon' ? 'New Moon' : 
                        event.type === 'holy-day' ? 'Holy Day' : 
                        event.type === 'fast' ? 'Fast Day' : 'Sabbath'}
@@ -168,9 +186,9 @@ export function EventDetails({ event, showScriptures, onToggleView }: EventDetai
               >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold">Scripture References</h3>
-                  <Badge className={`${typeColorClass} px-3 py-1`}>
+                  <Badge className={`${config.bg} ${config.text} border ${config.border} px-3 py-1`}>
                     <span className="flex items-center gap-2">
-                      {typeIcon}
+                      <Icon className="h-4 w-4" />
                       {event.title}
                     </span>
                   </Badge>
@@ -178,7 +196,7 @@ export function EventDetails({ event, showScriptures, onToggleView }: EventDetai
                 
                 {event.scriptures && event.scriptures.length > 0 ? (
                   <div className="space-y-4">
-                    {event.scriptures.map((scripture, index) => (
+                    {event.scriptures.map((scripture: string, index: number) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 10 }}

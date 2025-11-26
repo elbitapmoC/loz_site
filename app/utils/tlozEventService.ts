@@ -1,6 +1,12 @@
-import { CalendarEventData } from "./eventService";
-
-// 🔥 TIMEZONE FIX: Fixed date parsing to prevent off-by-1 errors - October 3rd, 2025 - v3.0
+interface CalendarEventData {
+  id: string;
+  title: string;
+  date: string;
+  type: string;
+  description: string;
+  enhancedTitle?: string;
+  hebrewName?: string;
+}
 
 // TLOZ 2025-2026 Sacred Calendar Data - CORRECTED DATES (Updated: October 3, 2025)
 const tlozEvents: CalendarEventData[] = [
@@ -465,3 +471,5 @@ export const tlozEventService = {
     }
   },
 };
+
+export type { CalendarEventData };

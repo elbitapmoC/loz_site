@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useLayoutEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 
 interface PageTransitionProps {
@@ -31,7 +31,6 @@ export function PageTransition({ children }: PageTransitionProps) {
 
   // Keep transitions extremely short to avoid interference with scroll behavior
   const pageTransition = {
-    type: "tween",
     ease: "easeOut",
     duration: 0.1, // Very short duration
   };

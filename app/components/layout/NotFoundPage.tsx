@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -19,10 +19,12 @@ import {
 
 export function NotFoundPage() {
   const pathname = usePathname();
+  const [origin, setOrigin] = useState("");
   
   // Force scroll to top when this component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    setOrigin(window.location.origin);
   }, []);
 
   const popularPages = [
@@ -35,7 +37,7 @@ export function NotFoundPage() {
     },
     {
       title: "Calendar",
-      description: "View our sacred calendar",
+      description: "View our calendar",
       href: "/calendar",
       icon: Calendar,
       color: "from-blue-500/20 to-blue-600/10"
@@ -43,7 +45,7 @@ export function NotFoundPage() {
     {
       title: "Learn",
       description: "Discover your heritage",
-      href: "/learn/12-tribes",
+      href: "/learn/twelve-tribes",
       icon: BookOpen,
       color: "from-green-500/20 to-green-600/10"
     },
@@ -98,8 +100,8 @@ export function NotFoundPage() {
             {pathname !== "/" && (
               <div className="bg-muted/50 border rounded-lg p-4 max-w-2xl mx-auto">
                 <p className="text-sm text-muted-foreground mb-2">You tried to visit:</p>
-                <code className="text-sm font-mono bg-background px-3 py-1 rounded border">
-                  {typeof window !== 'undefined' ? window.location.origin : ''}{pathname}
+                <code className="text-sm font-mono bg-background px-3 py-1 rounded border" suppressHydrationWarning>
+                  {origin}{pathname}
                 </code>
               </div>
             )}

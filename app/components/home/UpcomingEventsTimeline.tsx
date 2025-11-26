@@ -114,7 +114,7 @@ export function UpcomingEventsTimeline() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium mb-6">
-            Join Our Sacred Gatherings
+            Join Our Gatherings
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             Upcoming Events

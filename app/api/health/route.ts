@@ -4,6 +4,6 @@ export async function GET() {
   return NextResponse.json({ 
     status: 'ok', 
     timestamp: new Date().toISOString(),
-    message: 'Lions of Zion API is running'
+    message: 'LOZ API is running'
   })
 }

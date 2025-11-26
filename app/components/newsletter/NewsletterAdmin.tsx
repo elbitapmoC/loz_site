@@ -44,7 +44,7 @@ export function NewsletterAdmin() {
       URL.revokeObjectURL(url);
       
       toast.success('Newsletter subscriptions exported successfully');
-    } catch (error) {
+    } catch {
       toast.error('Failed to export subscriptions');
     }
   };
@@ -58,7 +58,7 @@ export function NewsletterAdmin() {
       } else {
         toast.error(result.message);
       }
-    } catch (error) {
+    } catch {
       toast.error('Failed to unsubscribe user');
     }
   };
