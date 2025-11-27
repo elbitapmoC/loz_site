@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { cn } from "../ui/utils";
+  import { cn } from "../ui/utils";
+  import { ModeToggle } from "./ModeToggle";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import { useAuth } from "../auth/AuthContext";
 import { Dock } from "../ui/dock";
@@ -384,6 +385,11 @@ export function Navigation({ className }: NavigationProps) {
                 })}
               </div>
             </nav>
+
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center gap-2">
+              <ModeToggle />
+            </div>
           </div>
         </div>
       </header>

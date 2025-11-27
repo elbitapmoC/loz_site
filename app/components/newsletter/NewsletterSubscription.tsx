@@ -16,6 +16,8 @@ interface NewsletterSubscriptionProps {
   description?: string;
   placeholder?: string;
   buttonText?: string;
+  inputAriaLabel?: string;
+  buttonAriaLabel?: string;
 }
 
 export function NewsletterSubscription({
@@ -25,7 +27,9 @@ export function NewsletterSubscription({
   title = 'Stay Connected',
   description = 'Subscribe to receive updates about holy days, events, and spiritual teachings.',
   placeholder = 'Enter your email address',
-  buttonText = 'Subscribe'
+  buttonText = 'Subscribe',
+  inputAriaLabel = 'Email address',
+  buttonAriaLabel = 'Subscribe to newsletter'
 }: NewsletterSubscriptionProps) {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -80,7 +84,7 @@ export function NewsletterSubscription({
   };
 
   const renderContent = () => (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div className="text-center">
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
           <Mail className="h-6 w-6 text-primary" />
@@ -89,37 +93,42 @@ export function NewsletterSubscription({
         <p className="text-muted-foreground text-sm mt-1">{description}</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="relative">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="rounded-lg bg-secondary-foreground/5 p-3 md:p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3 justify-items-center sm:justify-items-start">
           <Input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={placeholder}
-            className="pr-24"
+            className="w-full sm:w-full max-w-md mx-auto sm:mx-0 text-foreground placeholder:text-foreground/60"
             disabled={isLoading}
             required
+            aria-label={inputAriaLabel}
+            aria-describedby="newsletter-helper"
           />
-          <Button
-            type="submit"
-            size="sm"
-            disabled={isLoading || !email.trim()}
-            className="absolute right-1 top-1 h-8 px-3"
-          >
-            {isLoading ? (
-              <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-            ) : isSubscribed ? (
-              <CheckCircle className="h-4 w-4" />
-            ) : (
-              <Send className="h-4 w-4" />
-            )}
-            <span className="ml-1 hidden sm:inline">
-              {isLoading ? 'Subscribing...' : isSubscribed ? 'Subscribed!' : buttonText}
-            </span>
-          </Button>
+            <Button
+              type="submit"
+              size="sm"
+              disabled={isLoading || !email.trim()}
+              className="shrink-0 w-full sm:w-auto h-10 max-w-md mx-auto sm:mx-0"
+              aria-label={buttonAriaLabel}
+            >
+              {isLoading ? (
+                <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+              ) : isSubscribed ? (
+                <CheckCircle className="h-4 w-4" />
+              ) : (
+                <Send className="h-4 w-4" />
+              )}
+              <span className="ml-1 hidden sm:inline">
+                {isLoading ? 'Subscribing...' : isSubscribed ? 'Subscribed!' : buttonText}
+              </span>
+            </Button>
+          </div>
         </div>
-        
-        <p className="text-xs text-muted-foreground text-center">
+
+        <p id="newsletter-helper" className="text-xs text-muted-foreground text-center">
           We respect your privacy. Unsubscribe at any time.
         </p>
       </form>
@@ -137,14 +146,16 @@ export function NewsletterSubscription({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={placeholder}
-            className="flex-1"
+            className="flex-1 text-foreground placeholder:text-foreground/60"
             disabled={isLoading}
             required
+            aria-label={inputAriaLabel}
           />
           <Button
             type="submit"
             disabled={isLoading || !email.trim()}
             className="shrink-0"
+            aria-label={buttonAriaLabel}
           >
             {isLoading ? (
               <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
