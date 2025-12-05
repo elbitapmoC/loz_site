@@ -1,8 +1,0 @@
-"use client";
-
-import React from "react";
-import { NotFoundPage } from "./components/layout/NotFoundPage";
-
-export default function NotFound() {
-  return <NotFoundPage />;
-}

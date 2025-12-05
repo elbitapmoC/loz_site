@@ -24,10 +24,6 @@ node_modules/
 .env
 .env.*
 !.env.example
-supabase/.env
-supabase/.env.*
-supabase/functions/.env
-supabase/functions/.env.*
 
 # TypeScript
 *.tsbuildinfo
@@ -47,13 +43,7 @@ coverage/
 # Vite
 # Vite caches are usually in node_modules/.vite, which is covered by node_modules/
 
-# Supabase CLI & functions
-supabase/.temp/
-supabase/.branches/
-supabase/.cache/
-supabase/.studio/
-supabase/.logs/
-supabase/functions/node_modules/
+ 
 
 # Misc caches
 .eslintcache

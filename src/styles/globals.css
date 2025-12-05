@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+   DESIGN SYSTEM PRIMITIVES
+   Edit these values to change the entire site's color palette.
+   ========================================================================== */
+:root {
+  /* --- CORE PALETTE --- */
+  /* The Deepest Black */
+  --palette-black: #0a0a0a;
+  /* The Dark Charcoal (for light mode text) */
+  --palette-charcoal: #1a1a1a;
+  /* The Warm Off-White (for dark mode text) */
+  --palette-offwhite: #f5f5f0;
+  /* The Cream Background (for light mode bg) */
+  --palette-cream: #f9f9f7;
+  /* The Rich Gold (Primary Brand Color) */
+  --palette-gold-rich: #9e6c3a;
+  /* The Luminous Gold (for dark mode contrast/accents) */
+  --palette-gold-light: #e0b878;
+  /* The Deep Gold (for active states/borders) */
+  --palette-gold-deep: #8a5b30;
+  /* Soft Beige (for light mode secondary backgrounds) */
+  --palette-beige: #f2eee5;
+  /* Dark Grey (for dark mode secondary backgrounds) */
+  --palette-grey-dark: #1f1f1f;
+  
+  /* --- TYPOGRAPHY SYSTEM --- */
+  --font-sans: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-mono: 'DM Mono', 'Menlo', monospace;
+
+  /* --- SPACING & RADIUS --- */
+  --radius: 0.75rem;
+}
+
+/* ==========================================================================
+   SEMANTIC THEME TOKENS
+   These map the primitives above to functional UI roles.
+   ========================================================================== */
+:root {
+  /* --- LIGHT MODE MAPPING --- */
+  --background: var(--palette-cream);
+  --foreground: var(--palette-charcoal);
+  
+  --card: #ffffff;
+  --card-foreground: var(--palette-charcoal);
+  
+  --popover: #ffffff;
+  --popover-foreground: var(--palette-charcoal);
+  
+  --primary: var(--palette-gold-rich);
+  --primary-foreground: #ffffff;
+  
+  --secondary: var(--palette-beige);
+  --secondary-foreground: var(--palette-charcoal);
+  
+  --muted: var(--palette-beige);
+  --muted-foreground: #8c8c8c;
+  
+  --accent: var(--palette-gold-light);
+  --accent-foreground: var(--palette-charcoal);
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  /* Dynamic Alpha Borders based on Gold */
+  --border: rgba(158, 108, 58, 0.2);
+  --input: rgba(158, 108, 58, 0.2);
+  --ring: rgba(157, 108, 58, 0.3);
+  
+  --input-background: #ffffff;
+  --switch-background: #e2e2e2;
+  
+  /* Charts */
+  --chart-1: var(--palette-gold-rich);
+  --chart-2: var(--palette-gold-light);
+  --chart-3: var(--palette-charcoal);
+  --chart-4: #5c4022;
+  --chart-5: #d4c4a9;
+  
+  /* Sidebar */
+  --sidebar: var(--palette-cream);
+  --sidebar-foreground: var(--palette-charcoal);
+  --sidebar-primary: var(--palette-gold-rich);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--palette-beige);
+  --sidebar-accent-foreground: var(--palette-charcoal);
+  --sidebar-border: rgba(158, 108, 58, 0.2);
+  --sidebar-ring: rgba(157, 108, 58, 0.3);
+}
+
+.dark {
+  /* --- DARK MODE MAPPING --- */
+  --background: var(--palette-black);
+  --foreground: var(--palette-offwhite);
+  
+  --card: #121212;
+  --card-foreground: var(--palette-offwhite);
+  
+  --popover: #121212;
+  --popover-foreground: var(--palette-offwhite);
+  
+  /* Use Lighter Gold in Dark Mode for better contrast/visibility */
+  --primary: var(--palette-gold-light);
+  --primary-foreground: var(--palette-black);
+  
+  --secondary: var(--palette-grey-dark);
+  --secondary-foreground: var(--palette-gold-light);
+  
+  --muted: var(--palette-grey-dark);
+  --muted-foreground: #a0a0a0;
+  
+  --accent: var(--palette-gold-rich);
+  --accent-foreground: var(--palette-offwhite);
+  
+  --destructive: #991b1b;
+  --destructive-foreground: var(--palette-offwhite);
+  
+  --border: rgba(224, 184, 120, 0.15);
+  --input: rgba(224, 184, 120, 0.15);
+  --ring: rgba(224, 184, 120, 0.3);
+  
+  --switch-background: #333333;
+  
+  /* Charts */
+  --chart-1: var(--palette-gold-light);
+  --chart-2: var(--palette-gold-rich);
+  --chart-3: var(--palette-offwhite);
+  --chart-4: #4a3720;
+  --chart-5: #8a7555;
+  
+  /* Sidebar */
+  --sidebar: var(--palette-black);
+  --sidebar-foreground: var(--palette-offwhite);
+  --sidebar-primary: var(--palette-gold-light);
+  --sidebar-primary-foreground: var(--palette-black);
+  --sidebar-accent: var(--palette-grey-dark);
+  --sidebar-accent-foreground: var(--palette-gold-light);
+  --sidebar-border: rgba(224, 184, 120, 0.15);
+  --sidebar-ring: rgba(224, 184, 120, 0.3);
+}
+
+/* ==========================================================================
+   TAILWIND CONFIGURATION EXPOSURE
+   ========================================================================== */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  
+  /* Chart Colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* Radius Tokens */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Sidebar Tokens */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html, body {
+    height: 100%;
+    scroll-behavior: auto;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  code, pre, kbd, samp {
+    font-family: var(--font-mono);
+  }
+  
+  #root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+/* Transitions */
+.theme-transition {
+  transition: color 100ms ease, background-color 100ms ease;
+}
+
+.theme-transition .theme-aware {
+  transition: color 100ms ease, background-color 100ms ease, border-color 100ms ease;
+}
+
+/* Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-spin-slow { animation: spin-slow 10s linear infinite; }
+.animate-ping-slow { animation: ping-slow 3s ease-in-out infinite; }
+.animate-reveal { animation: reveal 0.5s ease forwards; }
+
+/* Layout Utilities */
+.perspective { perspective: 1000px; }
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1260px;
+}
+@media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; } }
+
+/* Text Utilities */
+.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* Texture */
+.grain-bg { position: relative; }
+.grain-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mobile Fixes */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen { min-height: -webkit-fill-available; }
+  body, #root { min-height: -webkit-fill-available; }
+}
+
+@media (max-width: 767px) {
+  main { padding-bottom: 5rem; }
+  html { scroll-padding-bottom: 5rem; }
+}
