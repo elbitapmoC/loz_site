@@ -3,7 +3,7 @@ import { CalendarDashboard } from "./CalendarDashboard";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { VisualHierarchyText } from "../layout/VisualHierarchyText";
 import { ScriptureQuote } from "../layout/ScriptureQuote";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function CalendarPage() {
   return (

@@ -4,7 +4,7 @@ import { eventTypeColors } from "./CalendarDashboard";
 import { Badge } from "../ui/badge";
 import { Calendar, CalendarDays, Clock, Star, Moon } from "lucide-react";
 import { format, isAfter, startOfDay } from "date-fns";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useCalendarData } from "../../hooks/useCalendarData";
 
 export function EventsList() {

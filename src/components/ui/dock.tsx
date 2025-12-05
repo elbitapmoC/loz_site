@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { cn } from "./utils";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface DockItemProps {
   icon: React.ReactNode;

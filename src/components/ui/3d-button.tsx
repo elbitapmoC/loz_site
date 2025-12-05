@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import { Slot } from "@radix-ui/react-slot";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useTheme } from "../providers/ThemeProvider";
 
 const buttonVariants = cva(

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useAuth } from './AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button } from '../ui/button';

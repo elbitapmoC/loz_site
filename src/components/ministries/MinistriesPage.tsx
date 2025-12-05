@@ -1,11 +1,12 @@
-import React from "react";
-import { motion } from "motion/react";
+import React, { Profiler } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { VisualHierarchyText } from "../layout/VisualHierarchyText";
 import { PageHeader } from "../layout/PageHeader";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { getWebpUrl } from "../../utils/imageUtils";
 import {
   Heart,
   Users,
@@ -152,6 +153,7 @@ const ministries = [
 
 export function MinistriesPage() {
   return (
+    <Profiler id="MinistriesPage" onRender={(id, phase, actualDuration) => { if (phase === 'mount' || phase === 'update') { console.log(id, phase, actualDuration); } }}>
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-background via-background to-primary/5">
@@ -201,6 +203,7 @@ export function MinistriesPage() {
                   <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500" />
                   <ImageWithFallback
                     src={ministry.image}
+                    webpSrc={getWebpUrl(ministry.image)}
                     alt={ministry.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -301,5 +304,6 @@ export function MinistriesPage() {
         </div>
       </section>
     </div>
+    </Profiler>
   );
 }

@@ -4,7 +4,7 @@ import { CalendarEvent, eventTypeColors, eventTypeIcons } from "./CalendarDashbo
 import { AspectRatio } from "../ui/aspect-ratio";
 import { Play, Calendar, MapPin, Star } from "lucide-react";
 import { Badge } from "../ui/badge";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 interface EventViewerProps {
   event: CalendarEvent | null;

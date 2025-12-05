@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, Profiler } from "react";
 import {
   motion,
   useScroll,
@@ -108,6 +108,7 @@ const ParallaxHero = ({ data }: { data: TribeData }) => {
       >
         <ImageWithFallback
           src={data.mainHeritageImage}
+          webpSrc={data.mainHeritageImage?.includes('fm=') ? data.mainHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.mainHeritageImage}${data.mainHeritageImage.includes('?') ? '&' : '?'}fm=webp`}
           alt={data.mainHeritageImageAlt}
           className="w-full h-full object-cover opacity-60"
         />
@@ -366,6 +367,7 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
           >
             <ImageWithFallback
               src={data.mainHeritageImage}
+              webpSrc={data.mainHeritageImage?.includes('fm=') ? data.mainHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.mainHeritageImage}${data.mainHeritageImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={data.mainHeritageImageAlt}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -414,6 +416,7 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
           >
             <ImageWithFallback
               src={data.familyHeritageImage}
+              webpSrc={data.familyHeritageImage?.includes('fm=') ? data.familyHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.familyHeritageImage}${data.familyHeritageImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={`${data.tribeName} Community`}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -436,6 +439,7 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
           >
             <ImageWithFallback
               src={data.territoryImage}
+              webpSrc={data.territoryImage?.includes('fm=') ? data.territoryImage.replace(/fm=[^&]*/,'fm=webp') : `${data.territoryImage}${data.territoryImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={data.territoryImageAlt || data.territory}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -457,6 +461,7 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
           >
             <ImageWithFallback
               src={data.tribalLeaderImage}
+              webpSrc={data.tribalLeaderImage?.includes('fm=') ? data.tribalLeaderImage.replace(/fm=[^&]*/,'fm=webp') : `${data.tribalLeaderImage}${data.tribalLeaderImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={data.leaderTitle || "Tribal Leader"}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
@@ -707,7 +712,8 @@ export function TribePageTemplate({
   tribeData,
 }: TribePageTemplateProps) {
   return (
-    <div className="bg-background min-h-screen text-foreground selection:bg-[#D4AF37] selection:text-black">
+    <Profiler id="TribePageTemplate" onRender={(id, phase, actualDuration) => { if (phase === 'mount' || phase === 'update') { console.log(id, phase, actualDuration); } }}>
+    <div className="bg-background min-h-screen text-foreground selection:bg-[#D4AF37] selection:text:black">
       {/* Global Noise Overlay */}
       <div className="fixed inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay z-[100] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
@@ -734,5 +740,6 @@ export function TribePageTemplate({
         </span>
       </motion.div>
     </div>
+    </Profiler>
   );
 }

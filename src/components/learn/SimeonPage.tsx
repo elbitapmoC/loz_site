@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
@@ -171,13 +172,13 @@ export function SimeonPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="/learn/12-tribes"
+              <Link
+                to="/learn/12-tribes"
                 className="group inline-flex items-center bg-primary/10 hover:bg-primary/20 transition-colors px-6 py-3 rounded-lg font-medium"
               >
                 <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 Back to 12 Tribes
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

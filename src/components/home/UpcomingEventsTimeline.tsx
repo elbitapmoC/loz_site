@@ -158,6 +158,7 @@ export function UpcomingEventsTimeline() {
                   <div className="relative h-48 overflow-hidden">
                     <ImageWithFallback
                       src={event.image}
+                      webpSrc={`${event.image}&fm=webp`}
                       alt={event.title}
                       width={400}
                       height={200}
@@ -232,13 +233,14 @@ export function UpcomingEventsTimeline() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <LiquidButton
-            background="var(--primary)"
-            className="text-primary-foreground px-8 py-3 text-lg"
-            onClick={() => (window.location.href = "/events")}
-          >
-            View All Events
-          </LiquidButton>
+          <Link to="/events">
+            <LiquidButton
+              background="var(--primary)"
+              className="text-primary-foreground px-8 py-3 text-lg"
+            >
+              View All Events
+            </LiquidButton>
+          </Link>
         </motion.div>
       </div>
     </section>

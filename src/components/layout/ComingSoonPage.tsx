@@ -36,7 +36,7 @@ export function ComingSoonPage({ title }: ComingSoonPageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
             <Link to="/learn/12-tribes" className="group relative overflow-hidden rounded-xl border border-border dark:border-white/10 bg-background/40 backdrop-blur-sm hover:bg-primary/5 transition-all duration-500 p-8 text-center hover:shadow-[0_0_30px_rgba(234,179,8,0.1)] hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 transition-opacity duration-500" />
               <h3 className="text-xl font-serif font-bold mb-3 group-hover:text-primary transition-colors relative z-10">
                 The 12 Tribes
               </h3>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../ui/utils";
 import { ModeToggle } from "./ModeToggle";
 import { LiquidButton } from "./LiquidButton";

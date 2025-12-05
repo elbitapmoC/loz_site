@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -191,9 +192,9 @@ export function ContactPage() {
                     <p className="font-medium">Locations</p>
                     <p className="text-sm text-muted-foreground">
                       We have multiple locations.<br />
-                      <a href="/locations" className="text-primary hover:underline">
+                      <Link to="/locations" className="text-primary hover:underline">
                         View all locations →
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </div>
@@ -362,9 +363,9 @@ export function ContactPage() {
                           className="text-sm font-normal leading-relaxed peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                         >
                           I have read and accept the{' '}
-                          <a href="/privacy" className="text-primary hover:underline">
+                          <Link to="/privacy" className="text-primary hover:underline">
                             Privacy Policy
-                          </a>
+                          </Link>
                         </Label>
                       </div>
                     </div>

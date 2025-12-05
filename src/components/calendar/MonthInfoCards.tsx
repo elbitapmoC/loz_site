@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "../ui/card";
 import { CalendarDays, BookText, Star, Scroll, ExternalLink } from "lucide-react";
 import { HebrewMonth } from "./CalendarDashboard";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 interface MonthInfoCardsProps {
   selectedMonth: HebrewMonth;

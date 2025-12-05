@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // 🔥 TIMEZONE FIX: Fixed date parsing to prevent off-by-1 errors - October 3rd, 2025 - v3.0
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Calendar, ChevronLeft, ChevronRight, Moon, Star, Clock, Calendar as CalendarIcon, X, Grid3X3, List, Filter, Eye, EyeOff } from "lucide-react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";

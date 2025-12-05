@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useLocation, Link } from "react-router-dom";
 import { VisualHierarchyText } from "../layout/VisualHierarchyText";
 import {
@@ -295,14 +295,14 @@ export function PrivacyPolicy() {
                   don't hesitate to reach out to our
                   administrative team.
                 </p>
-                <a href="/contact">
+                <Link to="/contact">
                   <Button
                     variant="outline"
                     className="border-primary/50 hover:bg-primary hover:text-black text-primary transition-all duration-300"
                   >
                     Contact Administration
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

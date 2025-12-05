@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
@@ -238,6 +238,7 @@ function BeliefCard({
 }
 
 export function AboutPage() {
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
@@ -264,15 +265,8 @@ export function AboutPage() {
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
             }}
-            animate={{
-              y: [-20, 20],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
+            animate={reduceMotion ? { opacity: 0.6 } : { y: [-20, 20], opacity: [0.2, 0.8, 0.2] }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 3 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 }}
           />
         ))}
 

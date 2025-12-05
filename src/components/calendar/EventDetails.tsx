@@ -3,7 +3,7 @@ import { CalendarEvent, eventTypeColors, eventTypeIcons } from "./CalendarDashbo
 import { Home, Book, ExternalLink, Calendar, MapPin, Clock } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { CustomScrollArea } from "../ui/custom-scroll-area";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 interface EventDetailsProps {
   event: CalendarEvent | null;

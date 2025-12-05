@@ -95,13 +95,14 @@ export function UpcomingEvents() {
               Upcoming Events
             </h2>
           </div>
-          <LiquidButton
-            background="var(--accent)"
-            className="mt-4 md:mt-0 text-accent-foreground"
-            onClick={() => (window.location.href = "/events")}
-          >
-            View All Events
-          </LiquidButton>
+          <Link to="/events">
+            <LiquidButton
+              background="var(--accent)"
+              className="mt-4 md:mt-0 text-accent-foreground"
+            >
+              View All Events
+            </LiquidButton>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -114,6 +115,7 @@ export function UpcomingEvents() {
               <div className="relative h-48 overflow-hidden">
                 <ImageWithFallback
                   src={event.image}
+                  webpSrc={`${event.image}&fm=webp`}
                   alt={event.title}
                   width={400}
                   height={200}
