@@ -311,7 +311,7 @@ export function SacredResourcesHub() {
 
               <div className="flex flex-col sm:flex-row justify-center items-center">
                 <Link
-                  className="min-w-[220px] h-14 bg-primary text-primary-foreground hover:bg-primary/90 dark:text-black dark:hover:bg-white transition-colors text-xs uppercase tracking-[0.2em] font-bold shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+                  className="border-primary/50 min-w-[220px] bg-primary text-primary-foreground hover:bg-primary/90 dark:text-black dark:hover:bg-white transition-colors text-xs uppercase tracking-[0.2em] font-bold p-4"
                   to="/contact"
                 >
                   Request Specific Guide

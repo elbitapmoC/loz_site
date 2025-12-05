@@ -28,7 +28,7 @@ export function SignInPage() {
       setError(error.message || 'Failed to sign in');
       setLoading(false);
     } else {
-      navigate('/donations');
+      navigate('/');
     }
   };
 
@@ -49,7 +49,7 @@ export function SignInPage() {
             </div>
             <CardTitle className="text-3xl">Welcome Back</CardTitle>
             <CardDescription>
-              Sign in to access your account and manage your donations
+              Sign in to access your account
             </CardDescription>
           </CardHeader>
 

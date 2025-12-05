@@ -124,7 +124,6 @@ export function Footer() {
               {[
                 { label: "Ministries", to: "/ministries" },
                 { label: "Locations", to: "/locations" },
-                { label: "Donations", to: "/donations" },
                 { label: "Contact Us", to: "/contact" },
               ].map((link) => (
                 <li key={link.to}>

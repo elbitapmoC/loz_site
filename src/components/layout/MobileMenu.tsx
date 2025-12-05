@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   X,
-  Gift,
   ChevronDown,
   MapPin,
   ChevronRight,
@@ -61,15 +60,7 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
           </button>
         </div>
 
-        {/* Donate button at top */}
-        <Link
-          to="/donations"
-          onClick={onClose}
-          className="mb-8 bg-primary text-primary-foreground py-3 px-6 rounded-md font-medium shadow-md hover:shadow-lg transition-shadow flex items-center justify-center gap-2 w-full max-w-md mx-auto focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-        >
-          <Gift className="h-5 w-5" />
-          Donate
-        </Link>
+        
 
         {/* Categorized Links */}
         <div className="space-y-3 max-w-md mx-auto w-full">

@@ -41,7 +41,7 @@ export function SignUpPage() {
       setError(error.message || 'Failed to create account');
       setLoading(false);
     } else {
-      navigate('/donations');
+      navigate('/');
     }
   };
 

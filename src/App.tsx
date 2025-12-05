@@ -65,9 +65,6 @@ const PrivacyPolicy = lazyImport(() => import("./components/legal/PrivacyPolicy"
 const SignInPage = lazyImport(() => import("./components/auth/SignInPage"), "SignInPage");
 const SignUpPage = lazyImport(() => import("./components/auth/SignUpPage"), "SignUpPage");
 
-// Donation Pages
-const DonationPage = lazyImport(() => import("./components/donations/DonationPage"), "DonationPage");
-const DonationHistoryPage = lazyImport(() => import("./components/donations/DonationHistoryPage"), "DonationHistoryPage");
 const LocationsPage = lazyImport(() => import("./components/layout/LocationsPage"), "LocationsPage");
 
 
@@ -88,9 +85,7 @@ const AppRoutes = () => {
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
 
-          {/* Donation Routes */}
-          <Route path="/donations" element={<DonationPage />} />
-          <Route path="/donations/history" element={<DonationHistoryPage />} />
+          
 
           {/* About Section */}
           <Route path="/about" element={<AboutPage />} />
@@ -237,10 +232,7 @@ const AppRoutes = () => {
             path="/locations"
             element={<LocationsPage />}
           />
-          <Route
-            path="/donate"
-            element={<ComingSoonPage title="Donate" />}
-          />
+          
           <Route
             path="/welcome-booklet"
             element={<ComingSoonPage title="Welcome Booklet" />}
