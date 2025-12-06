@@ -38,7 +38,7 @@ export function CallToAction() {
                 Join Our Community
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              <h2 className="text-3xl md:text-4xl font-md mb-6 leading-tight">
                 Begin Your{" "}
                 <span className="text-primary relative">
                   Spiritual Journey

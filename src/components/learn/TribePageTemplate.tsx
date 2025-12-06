@@ -100,7 +100,7 @@ const ParallaxHero = ({ data }: { data: TribeData }) => {
   return (
     <div
       ref={ref}
-      className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-background"
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-background"
     >
       {/* Background Image with Parallax */}
       <motion.div
@@ -111,6 +111,11 @@ const ParallaxHero = ({ data }: { data: TribeData }) => {
           src={data.mainHeritageImage}
           webpSrc={data.mainHeritageImage?.includes('fm=') ? data.mainHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.mainHeritageImage}${data.mainHeritageImage.includes('?') ? '&' : '?'}fm=webp`}
           alt={data.mainHeritageImageAlt}
+          width={1920}
+          height={1080}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
@@ -371,6 +376,9 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
               webpSrc={data.mainHeritageImage?.includes('fm=') ? data.mainHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.mainHeritageImage}${data.mainHeritageImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={data.mainHeritageImageAlt}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={1280}
+              height={960}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 md:p-12">
@@ -420,6 +428,9 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
               webpSrc={data.familyHeritageImageWebp ?? (data.familyHeritageImage?.includes('fm=') ? data.familyHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.familyHeritageImage}${data.familyHeritageImage.includes('?') ? '&' : '?'}fm=webp`)}
               alt={`${data.tribeName} Community`}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={800}
+              height={600}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
             <div className="absolute bottom-4 left-4">
@@ -443,6 +454,9 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
               webpSrc={data.territoryImage?.includes('fm=') ? data.territoryImage.replace(/fm=[^&]*/,'fm=webp') : `${data.territoryImage}${data.territoryImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={data.territoryImageAlt || data.territory}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={800}
+              height={600}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
             <div className="absolute bottom-4 left-4">
@@ -465,6 +479,9 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
               webpSrc={data.tribalLeaderImage?.includes('fm=') ? data.tribalLeaderImage.replace(/fm=[^&]*/,'fm=webp') : `${data.tribalLeaderImage}${data.tribalLeaderImage.includes('?') ? '&' : '?'}fm=webp`}
               alt={data.leaderTitle || "Tribal Leader"}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              width={800}
+              height={1200}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80" />
             <div className="absolute bottom-0 left-0 p-8">

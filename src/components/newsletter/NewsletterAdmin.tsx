@@ -161,6 +161,7 @@ export function NewsletterAdmin() {
                 
                 {subscription.isActive && (
                   <Button
+                    aria-label="Unsubscribe"
                     variant="outline"
                     size="sm"
                     onClick={() => handleUnsubscribe(subscription.email)}

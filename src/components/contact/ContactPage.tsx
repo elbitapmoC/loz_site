@@ -8,7 +8,7 @@ import { Textarea } from '../ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { Checkbox } from '../ui/checkbox';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Clock, Send, Heart } from 'lucide-react';
 
 interface ContactFormData {

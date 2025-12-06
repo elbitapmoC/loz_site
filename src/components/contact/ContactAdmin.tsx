@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
 import { Separator } from '../ui/separator';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { 
   Mail, 
   User, 
@@ -263,7 +263,7 @@ export function ContactAdmin() {
                       </div>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
-                          <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive">
+                          <Button aria-label="Delete submission" variant="ghost" size="sm" className="text-destructive hover:text-destructive">
                             <Trash2 className="h-4 w-4" />
                           </Button>
                         </AlertDialogTrigger>

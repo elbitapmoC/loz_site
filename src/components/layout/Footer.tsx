@@ -1,19 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Heart,
-  MapPin,
-  Youtube,
-  Instagram,
-  Facebook,
-} from "lucide-react";
+import { Heart, MapPin, Youtube, Instagram, Facebook } from "lucide-react";
 import { NewsletterSubscription } from "../newsletter/NewsletterSubscription";
+import { ZionLogo } from "./ZionLogo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-background text-foreground border-t border-primary/20 font-sans transition-colors duration-300">
+    <footer
+      className="relative bg-background text-foreground border-t border-primary/20 font-sans transition-colors duration-300"
+    >
       {/* Golden accent line at top */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-40"></div>
 
@@ -31,6 +28,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               {/* Logo Icon */}
               <div className="w-12 h-12 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center">
+                {/* <ZionLogo className="h-3/4 w-auto text-primary" /> */}
                 <span className="font-serif font-bold text-primary text-xl">
                   L
                 </span>
@@ -41,16 +39,15 @@ export function Footer() {
                   Thee Light of Zion
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-primary">
-                  Restoring Heritage
+                  Mat 5:16-
                 </span>
               </div>
             </div>
 
             <p className="text-foreground/70 text-sm leading-relaxed max-w-sm font-light">
-              A sanctuary for those seeking biblical truth. We
-              are dedicated to uncovering the ancient paths,
-              keeping the commandments, and preparing a people
-              for the Kingdom.
+              A sanctuary for those seeking biblical truth. We are dedicated to
+              uncovering the ancient paths, keeping the commandments, and
+              preparing a people for the Kingdom.
             </p>
 
             {/* Social Links */}
@@ -145,8 +142,8 @@ export function Footer() {
               Stay Informed
             </h3>
             <p className="text-foreground/60 text-xs leading-relaxed">
-              Receive updates on feast days, new teachings, and
-              community gatherings.
+              Receive updates on feast days, new teachings, and community
+              gatherings.
             </p>
 
             <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:max-w-none">
@@ -169,8 +166,7 @@ export function Footer() {
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-8 border-t border-foreground/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-foreground/40 text-xs font-light tracking-wide">
-            &copy; {currentYear} Thee Light of Zion. All rights
-            reserved.
+            &copy; {currentYear} Thee Light of Zion. All rights reserved.
           </div>
 
           <div className="flex items-center gap-8">

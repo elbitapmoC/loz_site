@@ -124,6 +124,7 @@ export function NewsletterSubscription({
           />
           <Button
             type="submit"
+            aria-label="Subscribe"
             disabled={isLoading || !email.trim()}
             className="shrink-0"
           >

@@ -50,13 +50,13 @@ export function HeroSection({
       <div className="container py-20 z-10 relative">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center text-center space-y-8">
-            {/* Primary Heading with Visual Hierarchy */}
             <div className="mb-4 md:mb-8">
               <VisualHierarchyText
                 as="h1"
                 size="large"
                 secondaryFont="cinzel"
                 secondaryWeight="semibold"
+                animation={false}
               />
             </div>
 

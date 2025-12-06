@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../ui/utils";
 import { ModeToggle } from "./ModeToggle";
-import { LiquidButton } from "./LiquidButton";
 import { useTheme } from "../providers/ThemeProvider";
-import { useAuth } from "../auth/AuthContext";
 import { Dock } from "../ui/dock";
 import { MobileMenu } from "./MobileMenu";
 import { ZionLogo } from "./ZionLogo";
@@ -20,9 +18,7 @@ import {
   Home,
   Info,
   Headphones,
-  DollarSign,
-  User,
-  LogOut,
+
   Users,
   Bookmark,
   ScrollText,
@@ -32,15 +28,6 @@ import {
   Moon,
   MapPin,
 } from "lucide-react";
-import { Button } from "../ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
 
 interface NavigationProps {
   className?: string;
@@ -185,7 +172,6 @@ const mobileMenuCategories = [
 export function Navigation({ className }: NavigationProps) {
   const location = useLocation();
   const { isDark, setTheme } = useTheme();
-  const { user, signOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -242,9 +228,10 @@ export function Navigation({ className }: NavigationProps) {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 transition-all duration-300 z-50",
+          "fixed top-0 left-0 right-0 z-50",
           "bg-background/90 backdrop-blur-md border-b border-primary/10",
-          scrolled ? "shadow-md py-2" : "py-4",
+          "h-16 transition-colors duration-300 flex justify-center items-center",
+          scrolled ? "shadow-md" : "",
           className,
         )}
       >
@@ -259,8 +246,8 @@ export function Navigation({ className }: NavigationProps) {
               <div className="flex items-center perspective">
                 <div
                   className={cn(
-                    "relative flex items-center justify-center mr-3 overflow-hidden transition-all duration-300 rounded-full bg-primary/10 border border-primary/20",
-                    scrolled ? "w-8 h-8" : "w-10 h-10",
+                    "relative flex items-center justify-center mr-3 overflow-hidden transition-transform duration-300 rounded-full bg-primary/10 border border-primary/20 w-10 h-10",
+                    scrolled ? "scale-95" : "scale-100",
                   )}
                 >
                   <ZionLogo className="h-3/4 w-auto text-primary" />
@@ -268,8 +255,7 @@ export function Navigation({ className }: NavigationProps) {
                 <div className="flex flex-col">
                   <span
                     className={cn(
-                      "font-serif font-semibold tracking-tight transition-all duration-300 text-foreground",
-                      scrolled ? "text-lg" : "text-xl",
+                      "font-serif font-semibold tracking-tight transition-colors duration-300 text-foreground text-xl",
                     )}
                   >
                     Thee Light of Zion

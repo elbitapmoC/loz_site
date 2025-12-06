@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { getWebpUrl } from "../../utils/imageUtils";
 import {
   Calendar,
   ArrowRight,
@@ -240,6 +241,7 @@ export function BiblicalEventsPreview() {
                 <div className="relative h-48 overflow-hidden">
                   <ImageWithFallback
                     src={event.image}
+                    webpSrc={getWebpUrl(event.image)}
                     alt={event.title}
                     width={400}
                     height={200}

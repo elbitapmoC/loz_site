@@ -122,6 +122,13 @@ export function VisualHierarchyText({
 
   const Comp = (as || "div") as React.ElementType;
 
+  const containerMinHeights = {
+    small: 120,
+    medium: 160,
+    large: 200,
+    mega: 240,
+  } as const;
+
   return (
     <>
       {/* Add the animation CSS to the component as a regular style tag */}
@@ -140,11 +147,16 @@ export function VisualHierarchyText({
           sizeClasses[size].container,
           className,
         )}
+        style={{
+          minHeight: containerMinHeights[size],
+          contentVisibility: "auto",
+          containIntrinsicSize: `${containerMinHeights[size]}px`,
+        }}
       >
         {/* Primary text (Discover Your Heritage) */}
         <div
           className={cn(
-            "text-foreground/80",
+            "text-foreground/80 leading-tight",
             sizeClasses[size].primary,
             animation
               ? "animate-in fade-in slide-in-from-bottom-1 duration-500 fill-mode-both"
@@ -156,6 +168,7 @@ export function VisualHierarchyText({
           style={{
             fontFamily: primaryFontFamily,
             fontWeight: primaryFontWeight,
+            fontSizeAdjust: 0.5,
           }}
         >
           {primary}
@@ -167,6 +180,7 @@ export function VisualHierarchyText({
             getLetterSpacing(secondaryFont),
             sizeClasses[size].secondary,
             animationClass,
+            "leading-tight",
           )}
           style={{
             fontFamily: secondaryFontFamily,
@@ -184,6 +198,7 @@ export function VisualHierarchyText({
             animation: animation
               ? "gradient 8s ease infinite"
               : "none",
+            fontSizeAdjust: 0.48,
           }}
         >
           {secondary}

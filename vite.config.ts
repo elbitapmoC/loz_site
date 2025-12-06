@@ -58,6 +58,7 @@
     build: {
       target: 'esnext',
       outDir: 'build',
+      minify: 'esbuild',
       cssCodeSplit: true,
       sourcemap: false,
       chunkSizeWarningLimit: 700,

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { getWebpUrl } from "../../utils/imageUtils";
 import {
   Download,
   BookOpen,
@@ -176,6 +177,7 @@ export function SacredResourcesHub() {
                     <div className="absolute inset-0 bg-primary/10 mix-blend-color z-10 pointer-events-none" />
                     <ImageWithFallback
                       src={resource.image}
+                      webpSrc={getWebpUrl(resource.image)}
                       alt={resource.title}
                       width={600}
                       height={400}
