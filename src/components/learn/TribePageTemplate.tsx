@@ -55,6 +55,7 @@ export interface TribeData {
   territoryImage: string;
   territoryImageAlt: string;
   familyHeritageImage: string;
+  familyHeritageImageWebp?: string;
   jacobsBlessing: string;
   jacobsBlessingReference: string;
   nextTribeName?: string;
@@ -416,7 +417,7 @@ const HeritageGallery = ({ data }: { data: TribeData }) => {
           >
             <ImageWithFallback
               src={data.familyHeritageImage}
-              webpSrc={data.familyHeritageImage?.includes('fm=') ? data.familyHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.familyHeritageImage}${data.familyHeritageImage.includes('?') ? '&' : '?'}fm=webp`}
+              webpSrc={data.familyHeritageImageWebp ?? (data.familyHeritageImage?.includes('fm=') ? data.familyHeritageImage.replace(/fm=[^&]*/,'fm=webp') : `${data.familyHeritageImage}${data.familyHeritageImage.includes('?') ? '&' : '?'}fm=webp`)}
               alt={`${data.tribeName} Community`}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

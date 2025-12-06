@@ -1,9 +1,5 @@
 import svgPaths from "./svg-ttpxtjj71q";
 import clsx from "clsx";
-import imgImage1 from "figma:asset/world.png";
-import imgVinylRecordVideo from "figma:asset/record.png";
-import imgImage from "figma:asset/notionavatar.png";
-import imgImage8 from "figma:asset/emgmlm.png";
 import { imgNavigationMenuVerticalSideMenu } from "./svg-torhi";
 type BackgroundImage202Props = {
   additionalClassNames?: string[];
@@ -283,9 +279,9 @@ function Group8() {
   return (
     <div className="absolute contents left-[588.995px] top-[349px]">
       <div
-        className="absolute bg-[50%_50%] bg-cover bg-no-repeat left-1/2 size-[334px] top-[349px] translate-x-[-50%]"
+        className="absolute left-1/2 size-[334px] top-[349px] translate-x-[-50%] rounded-lg"
         data-name="image 1"
-        style={{ backgroundImage: `url('${imgImage1}')` }}
+        style={{ backgroundImage: "linear-gradient(135deg, rgba(212,175,55,0.2), rgba(0,0,0,0.1))" }}
       />
       <div
         className="absolute bg-[#000000] bg-clip-text css-tarb7e font-['Geist:SemiBold',_sans-serif] font-semibold leading-[0] left-[863.995px] text-[#000000] text-[72px] text-center top-[506.8px] tracking-[-3.6px] translate-x-[-50%] w-[550px]"
@@ -982,9 +978,9 @@ function Group11() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
       <div
-        className="[background-size:cover,_auto] [grid-area:1_/_1] bg-[#000000] h-[277px] ml-0 mt-0 relative rounded-lg w-[480px]"
+        className="[grid-area:1_/_1] h-[277px] ml-0 mt-0 relative rounded-lg w-[480px]"
         data-name="vinyl record video"
-        style={{ backgroundImage: `url('${imgVinylRecordVideo}')` }}
+        style={{ backgroundImage: "linear-gradient(135deg, rgba(0,0,0,0.3), rgba(212,175,55,0.15))" }}
       >
         <div className="absolute border-[#000000] border-[3px] border-solid inset-[-1.5px] pointer-events-none rounded-[9.5px] shadow-[8px_8px_0px_0px_#000000]" />
       </div>
@@ -1111,9 +1107,8 @@ function Avatar() {
     <div className="absolute left-6 top-[12.5px]" data-name="Avatar">
       <div className="box-border content-stretch flex flex-row items-center justify-start p-0 relative">
         <div
-          className="bg-[50%_50%] bg-cover bg-no-repeat rounded-[9999px] shrink-0 size-10"
+          className="rounded-[9999px] shrink-0 size-10 bg-muted"
           data-name="image"
-          style={{ backgroundImage: `url('${imgImage}')` }}
         />
       </div>
     </div>
@@ -1593,9 +1588,9 @@ export default function Keyboard() {
   return (
     <div className="bg-[#ffffff] relative size-full" data-name="Keyboard">
       <div
-        className="absolute bg-[50%_50%] bg-cover bg-no-repeat left-[1473px] size-[510px] top-[651px]"
+        className="absolute left-[1473px] size-[510px] top-[651px] rounded-lg"
         data-name="image 8"
-        style={{ backgroundImage: `url('${imgImage8}')` }}
+        style={{ backgroundImage: "linear-gradient(135deg, rgba(0,0,0,0.2), rgba(212,175,55,0.15))" }}
       />
       <div className="absolute h-[257px] left-[732px] top-[382px] w-[264px]">
         <div className="absolute bottom-[-70.039%] left-[-68.182%] right-[-68.182%] top-[-70.039%]">

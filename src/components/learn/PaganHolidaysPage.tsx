@@ -21,8 +21,6 @@ import {
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
-import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogTitle, DialogDescription } from "../ui/dialog";
-import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter } from "../ui/drawer";
 import { cn } from "../ui/utils";
 
 // --- RESTORED DATA WITH FULL CONTENT ---
@@ -168,21 +166,29 @@ const paganHolidays: PaganHoliday[] = [
 // 1. Glitch Hero (Preserved from Cinematic, adjusted for tone)
 const GlitchHero = () => {
   const reduceMotion = useReducedMotion();
+  const [showVideo, setShowVideo] = React.useState(false);
+  React.useEffect(() => {
+    if (reduceMotion) return;
+    const t = setTimeout(() => setShowVideo(true), 1200);
+    return () => clearTimeout(t);
+  }, [reduceMotion]);
   return (
     <div className="relative min-h-[80vh] w-full flex flex-col items-center justify-center overflow-hidden bg-background text-foreground pb-20">
       {/* Glitch Background */}
       <div className="absolute inset-0 z-0 opacity-10 dark:opacity-20">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-50 mix-blend-overlay" />
-         <video 
-           autoPlay 
-           muted 
-           loop 
-           playsInline
-           preload="none"
-           className="w-full h-full object-cover grayscale opacity-20 dark:opacity-30"
-         >
-           <source src="https://cdn.coverr.co/videos/coverr-static-tv-noise-5463/1080p.mp4" type="video/mp4" />
-         </video>
+         {showVideo && (
+           <video 
+             autoPlay 
+             muted 
+             loop 
+             playsInline
+             preload="none"
+             className="w-full h-full object-cover grayscale opacity-20 dark:opacity-30"
+           >
+             <source src="https://cdn.coverr.co/videos/coverr-static-tv-noise-5463/1080p.mp4" type="video/mp4" />
+           </video>
+         )}
       </div>
 
       <div className="z-10 text-center space-y-8 max-w-5xl px-4 pt-20">
@@ -304,72 +310,7 @@ function useMediaQuery(query: string) {
   return value;
 }
 
-const EvidenceBody = React.lazy(() => import("./EvidenceBody"));
-
-const EvidenceModal = ({ holiday, isOpen, onClose }: { holiday: PaganHoliday | null; isOpen: boolean; onClose: () => void }) => {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
-
-  if (!holiday) return null;
-
-  if (isDesktop) {
-    return (
-      <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-        <DialogContent className="max-w-4xl bg-background border-red-200 dark:border-red-900/20 text-foreground p-0 overflow-hidden h-[90vh] md:h-[85vh] flex flex-col">
-          {/* Header */}
-          <div className="bg-red-50 dark:bg-red-950/10 border-b border-red-200 dark:border-red-900/20 p-6 flex items-start justify-between shrink-0">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                 <Badge variant="destructive" className="bg-red-600 text-white hover:bg-red-700 tracking-widest font-mono uppercase text-xs">
-                   Origin Identified
-                 </Badge>
-                 <span className="text-red-600/50 dark:text-red-500/50 font-mono text-xs uppercase">Case ID: #{holiday.id.toUpperCase()}</span>
-              </div>
-              <DialogTitle className="text-3xl md:text-4xl font-bold text-foreground mb-1 font-serif tracking-wide">
-                {holiday.name}
-              </DialogTitle>
-              <DialogDescription className="text-red-600 dark:text-red-400 font-mono uppercase tracking-wider text-sm">
-                Formerly: {holiday.originalName}
-              </DialogDescription>
-            </div>
-          </div>
-
-          <div className="flex-1 overflow-y-auto p-6 md:p-8">
-            <Suspense fallback={<div className="p-6 text-muted-foreground">Loading evidence…</div>}>
-              <EvidenceBody holiday={holiday} />
-            </Suspense>
-          </div>
-        </DialogContent>
-      </Dialog>
-    );
-  }
-
-  return (
-    <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DrawerContent className="bg-background border-red-200 dark:border-red-900/20 text-foreground h-[90vh] flex flex-col">
-        <DrawerHeader className="bg-red-50 dark:bg-red-950/10 border-b border-red-200 dark:border-red-900/20 p-6 text-left shrink-0">
-            <div className="flex items-center gap-3 mb-2">
-               <Badge variant="destructive" className="bg-red-600 text-white hover:bg-red-700 tracking-widest font-mono uppercase text-xs">
-                 Origin Identified
-               </Badge>
-               <span className="text-red-600/50 dark:text-red-500/50 font-mono text-xs uppercase">Case ID: #{holiday.id.toUpperCase()}</span>
-            </div>
-            <DrawerTitle className="text-3xl font-bold text-foreground mb-1 font-serif tracking-wide">
-              {holiday.name}
-            </DrawerTitle>
-            <DrawerDescription className="text-red-600 dark:text-red-400 font-mono uppercase tracking-wider text-sm">
-              Formerly: {holiday.originalName}
-            </DrawerDescription>
-        </DrawerHeader>
-        
-        <div className="flex-1 overflow-y-auto p-6">
-          <Suspense fallback={<div className="p-6 text-muted-foreground">Loading evidence…</div>}>
-            <EvidenceBody holiday={holiday} />
-          </Suspense>
-        </div>
-      </DrawerContent>
-    </Drawer>
-  );
-};
+const EvidenceModal = React.lazy(() => import("./EvidenceModal"));
 
 export function PaganHolidaysPage() {
   const [selectedHoliday, setSelectedHoliday] = useState<PaganHoliday | null>(null);
@@ -406,11 +347,13 @@ export function PaganHolidaysPage() {
         </div>
       </section>
 
-      <EvidenceModal 
-        holiday={selectedHoliday} 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+      <Suspense fallback={<div className="p-6 text-muted-foreground">Loading…</div>}>
+        <EvidenceModal 
+          holiday={selectedHoliday} 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+        />
+      </Suspense>
 
       {/* Footer Quote */}
       <footer className="py-20 bg-muted/20 border-t border-border text-center px-4">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Card, CardContent } from "../ui/card";
@@ -24,7 +25,9 @@ import {
 } from "lucide-react";
 
 import chiefMinisterImg from "figma:asset/emm.png";
+import chiefMinisterImgWebp from "figma:asset/emm.webp";
 import elderMinisterImg from "figma:asset/cmsa.png";
+import elderMinisterImgWebp from "figma:asset/cmsa.webp";
 
 const beliefs = [
   {
@@ -119,16 +122,19 @@ const leaders = [
     name: "Shalamah Ban Banyamyan",
     role: "Chief Minister",
     image: elderMinisterImg,
+    webpImage: elderMinisterImgWebp,
   },
   {
     name: "Kahan Ban Lawya",
     role: "Chief Priest",
     image: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=800&q=80",
+    webpImage: undefined,
   },
   {
     name: "Moshe Ban Gad",
     role: "Elder Minister",
     image: chiefMinisterImg,
+    webpImage: chiefMinisterImgWebp,
   },
 ];
 
@@ -536,8 +542,9 @@ export function AboutPage() {
                 <Card className="bg-card border-border/40 overflow-hidden hover:border-primary/40 transition-colors h-full">
                    <div className="aspect-[4/5] overflow-hidden relative">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity z-10" />
-                      <img 
+                      <ImageWithFallback 
                         src={leader.image} 
+                        webpSrc={leader.webpImage}
                         alt={leader.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                       />
