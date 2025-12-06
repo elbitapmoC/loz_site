@@ -28,6 +28,7 @@ import {
   Moon,
   MapPin,
 } from "lucide-react";
+import { BrandLogo } from "./BrandLogo";
 
 interface NavigationProps {
   className?: string;
@@ -244,27 +245,8 @@ export function Navigation({ className }: NavigationProps) {
               className="relative flex items-center z-10 group"
             >
               <div className="flex items-center perspective">
-                <div
-                  className={cn(
-                    "relative flex items-center justify-center mr-3 overflow-hidden transition-transform duration-300 rounded-full bg-primary/10 border border-primary/20 w-10 h-10",
-                    scrolled ? "scale-95" : "scale-100",
-                  )}
-                >
-                  <ZionLogo className="h-3/4 w-auto text-primary" />
-                </div>
                 <div className="flex flex-col">
-                  <span
-                    className={cn(
-                      "font-serif font-semibold tracking-tight transition-colors duration-300 text-foreground text-xl",
-                    )}
-                  >
-                    Thee Light of Zion
-                  </span>
-                  {!scrolled && (
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-primary/80 hidden sm:block">
-                      Let Your Light So Shine
-                    </span>
-                  )}
+                  <BrandLogo />
                 </div>
               </div>
             </Link>

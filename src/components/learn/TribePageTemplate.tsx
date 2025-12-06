@@ -115,7 +115,7 @@ const ParallaxHero = ({ data }: { data: TribeData }) => {
           height={1080}
           loading="eager"
           decoding="async"
-          fetchpriority="high"
+          fetchPriority="high"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
@@ -331,10 +331,10 @@ const ProphecySection = ({ data }: { data: TribeData }) => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="mt-16 p-6 md:p-8 bg-muted/30 rounded-2xl border border-border backdrop-blur-sm text-left max-w-2xl mx-auto"
           >
-            <h4 className="text-primary text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
+            <h3 className="text-primary text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               Historical Fulfillment
-            </h4>
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
               {data.historicalConnection}
             </p>
@@ -550,9 +550,9 @@ const BibliographySection = ({ data }: { data: TribeData }) => {
       <div className="container max-w-4xl mx-auto px-6">
         <div className="flex items-center justify-center gap-4 mb-12">
           <div className="h-px w-12 bg-border" />
-          <h3 className="text-2xl font-serif text-center">
+          <h2 className="text-2xl font-serif text-center">
             Sources & References
-          </h3>
+          </h2>
           <div className="h-px w-12 bg-border" />
         </div>
 

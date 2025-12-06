@@ -245,7 +245,12 @@ export function TwelveTribesPage() {
         {/* Abstract Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-background via-background to-black opacity-90" />
-          <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1642313985076-356edaa90949?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb2xkJTIwZHVzdCUyMGJsYWNrJTIwYmFja2dyb3VuZCUyMGFic3RyYWN0fGVufDF8fHx8MTc2NDI5ODA1M3ww&ixlib=rb-4.1.0&q=80&w=1080')] bg-cover bg-center mix-blend-overlay" />
+          <div 
+            className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1642313985076-356edaa90949?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb2xkJTIwZHVzdCUyMGJsYWNrJTIwYmFja2dyb3VuZCUyMGFic3RyYWN0fGVufDF8fHx8MTc2NDI5ODA1M3ww&ixlib=rb-4.1.0&q=80&w=1080')`
+            }}
+          />
           <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
 

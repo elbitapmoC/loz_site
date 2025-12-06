@@ -16,12 +16,7 @@ interface VisualHierarchyTextProps {
   animation?: boolean;
   primaryFont?: PrimaryFontOption;
   secondaryFont?: SecondaryFontOption;
-  primaryWeight?:
-    | "light"
-    | "normal"
-    | "medium"
-    | "semibold"
-    | "bold";
+  primaryWeight?: "light" | "normal" | "medium" | "semibold" | "bold";
   secondaryWeight?: "normal" | "medium" | "semibold" | "bold";
   as?: React.ElementType;
 }
@@ -145,12 +140,10 @@ export function VisualHierarchyText({
             ? "flex-col"
             : "flex-row flex-wrap gap-x-4",
           sizeClasses[size].container,
-          className,
+          className
         )}
         style={{
           minHeight: containerMinHeights[size],
-          contentVisibility: "auto",
-          containIntrinsicSize: `${containerMinHeights[size]}px`,
         }}
       >
         {/* Primary text (Discover Your Heritage) */}
@@ -161,14 +154,11 @@ export function VisualHierarchyText({
             animation
               ? "animate-in fade-in slide-in-from-bottom-1 duration-500 fill-mode-both"
               : "",
-            primaryFont === "outfit"
-              ? "tracking-wide"
-              : "tracking-normal",
+            primaryFont === "outfit" ? "tracking-wide" : "tracking-normal"
           )}
           style={{
             fontFamily: primaryFontFamily,
             fontWeight: primaryFontWeight,
-            fontSizeAdjust: 0.5,
           }}
         >
           {primary}
@@ -180,7 +170,7 @@ export function VisualHierarchyText({
             getLetterSpacing(secondaryFont),
             sizeClasses[size].secondary,
             animationClass,
-            "leading-tight",
+            "leading-tight"
           )}
           style={{
             fontFamily: secondaryFontFamily,
@@ -192,13 +182,8 @@ export function VisualHierarchyText({
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            textFillColor:
-              "transparent" /* Non-standard, for compatibility */,
             color: "transparent" /* Fallback */,
-            animation: animation
-              ? "gradient 8s ease infinite"
-              : "none",
-            fontSizeAdjust: 0.48,
+            animation: animation ? "gradient 8s ease infinite" : "none",
           }}
         >
           {secondary}

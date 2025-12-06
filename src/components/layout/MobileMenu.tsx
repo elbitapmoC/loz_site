@@ -48,6 +48,7 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
         isOpen ? "translate-y-0" : "translate-y-full"
       )}
       aria-hidden={!isOpen}
+      inert={!isOpen ? "" : undefined}
     >
       <div className="container h-full flex flex-col pt-20 pb-28">
         <div className="absolute top-6 right-6">

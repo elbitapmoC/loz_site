@@ -31,13 +31,13 @@ export function HeroSection({
   return (
     <section className="relative overflow-hidden min-h-[85vh] flex items-center flex-col">
       {/* Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute -top-40 -right-40 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl translate-z-0" />
+        <div className="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl translate-z-0" />
 
         {/* Subtle grid pattern */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-10 translate-z-0"
           style={{
             backgroundImage: `linear-gradient(${isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)"} 1px, transparent 1px), 
                              linear-gradient(90deg, ${isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)"} 1px, transparent 1px)`,

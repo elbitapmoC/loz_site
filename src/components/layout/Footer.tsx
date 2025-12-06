@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Heart, MapPin, Youtube, Instagram, Facebook } from "lucide-react";
 import { NewsletterSubscription } from "../newsletter/NewsletterSubscription";
-import { ZionLogo } from "./ZionLogo";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,21 +26,8 @@ export function Footer() {
           {/* 1. Brand Column (4 cols) */}
           <div className="lg:col-span-4 flex flex-col gap-6 items-center lg:items-start text-center lg:text-left">
             <div className="flex items-center gap-3">
-              {/* Logo Icon */}
-              <div className="w-12 h-12 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center">
-                {/* <ZionLogo className="h-3/4 w-auto text-primary" /> */}
-                <span className="font-serif font-bold text-primary text-xl">
-                  L
-                </span>
-              </div>
-              {/* Logo Text */}
               <div className="flex flex-col">
-                <span className="font-serif font-bold text-2xl tracking-wide text-foreground">
-                  Thee Light of Zion
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-primary">
-                  Mat 5:16-
-                </span>
+                <BrandLogo />
               </div>
             </div>
 
@@ -60,12 +47,12 @@ export function Footer() {
                 },
                 {
                   icon: Facebook,
-                  href: "#",
+                  href: "https://www.facebook.com/TheeL.O.Z.Network/",
                   label: "Facebook",
                 },
                 {
                   icon: Instagram,
-                  href: "#",
+                  href: "https://www.instagram.com/theelightofzion/",
                   label: "Instagram",
                 },
               ].map((social, i) => (
