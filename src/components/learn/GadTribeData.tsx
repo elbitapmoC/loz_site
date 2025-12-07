@@ -71,12 +71,15 @@ They acted as lawgivers (Deut 33:21) and executed justice alongside their brethr
   quoteDescription: "In 'Stolen Continents' (pg. 235), the Seneca prophet Handsome Lake describes a vision of a figure with hands and feet torn by iron nails. The figure told him: 'They slew me... So I have gone home to shut the doors of heaven that they may not see me again until the earth passes away... Now tell your people that they will become lost when they follow the ways of the white man.'",
 
   bibliography: [
-    "Stolen Continents, by Ronald Wright (Page 235)",
-    "Historical accounts of Handsome Lake",
-    "Genesis 30:11, 49:1, 19",
-    "Deuteronomy 33:20-21",
-    "1 Chronicles 12:8",
-    "Revelation 2:26-27"
+    "“Gad: Israel's Lion in the New World” (source explicitly identifies the tribe as North American Indians/prophetic text fulfillment)",
+    "“History of the American Indians” by James Adair (cited concerning swiftness, customs, dietary laws, and mourning rites matching Hebraic traditions)",
+    "“American Holocaust” by David E. Stannard (context on massacres where victims were killed by fire and not spared)",
+    "“Lost Tribes and Promised Lands” by Ronald Sanders (Seminoles identifying themselves as the Tribe of Reuben, suggesting proximity to Joseph/Gad lineage in America)",
+    "“American Discovery” by Jack Forbes (Native American captives traded for goods and sold overseas to Lisbon and Spain)",
+    "“Africans and Native Americans” by Jack Forbes (Indian prisoners sold to the West Indies, Mediterranean Coast, and North Africa (Tangers))",
+    "“Stolen Continents” by Ronald Wright",
+    "“The enslavement of the American Indian in colonial times” (cruelty and massacres described by William Bradford)",
+    "“wisdom sits in places: landscape and language among the Western Apachi” by Keith H. Basso (Navajo recognizing themselves as Gad, meaning 'good fortune')"
   ],
   
   // Navigation

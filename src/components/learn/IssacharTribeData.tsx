@@ -69,13 +69,19 @@ The tribe also has a dark history of idolatry (Hosea 8:13-14), turning from the 
   quoteDescription: "Viscount Kingsborough (19th Century) exhausted his fortune proving the Israelites were ancestors of the Mexican Indians. Friar Diego Duran also documented the 'Judaic character' of Aztec religion, including purification baths and unleavened bread.",
 
   bibliography: [
-    "Mysteries of the Ancient Americas, by Readers Digest page 37",
-    "Lost Tribes and Promised Lands, Ronald Sanders page 187,188",
-    "History of the American Indians, by James Adair page 207",
-    "Genesis 30:18, 49:1, 49:14-15",
-    "Deuteronomy 33:1, 18-19",
-    "1 Chronicles 12:32",
-    "Hosea 8:13-14"
+    "“Issachar: Aztecs and the Prophetic Burden” (source explicitly identifies the tribe)",
+    "“Lost Tribes and Promised Lands” by Ronald Sanders pages 187, 188",
+    "“History of the American Indians” by James Adair page 207",
+    "“The History of the Indies of New Spain (Mexico)” by Friar Diego Duran (cited via Ronald Sanders)",
+    "“Mysteries of the Ancient Americas” Readers Digest page 37",
+    "“Origins of the American Indians” by Lee Huton page 88",
+    "“The Three Americas: The Racial Past and Dominant Racial Factors of Their Future” by Joseph Whitney page 206",
+    "“The Mystery of Mexican Pyramids” by Peter Tompkins page 79",
+    "“Handbook of Life of ancient Maya World” by L.V. Foster pages 162, 66",
+    "“Pre-Colombian Landscapes of Creation and or Origin” by John Edward Staler page 123",
+    "“Maya history and religion” by John Eric Sydney Thompson page 305",
+    "“Introduction to the Study of the Maya Hieroglyph” by Sylvanus Griswell Moley page 36",
+    "“Ancient Great Ages of Man Ancient America” Page 43 (referenced for master-builders/pyramids)"
   ],
   
   // Navigation

@@ -24,10 +24,10 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-import chiefMinisterImg from "figma:asset/emm.png";
-import chiefMinisterImgWebp from "figma:asset/emm.webp";
-import elderMinisterImg from "figma:asset/cmsa.png";
-import elderMinisterImgWebp from "figma:asset/cmsa.webp";
+import chiefMinisterImg from "../../assets/emm.png";
+import chiefMinisterImgWebp from "../../assets/emm.webp";
+import elderMinisterImg from "../../assets/cmsa.png";
+import elderMinisterImgWebp from "../../assets/cmsa.webp";
 
 const beliefs = [
   {
@@ -626,7 +626,7 @@ export function AboutPage() {
                     className="w-full h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-xl transition-all hover:scale-[1.02]"
                     asChild
                   >
-                    <Link to="/visit">
+                    <Link to="/locations">
                       Plan Your Visit
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>

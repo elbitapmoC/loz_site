@@ -69,11 +69,20 @@ However, this history also carries a dark shadow. As Hosea 8:13 foretold ("They 
   quoteDescription: "James Adair, in his *History of the American Indians* (p. 214), noted: \".. the Indian native, from Florida to Panama …, believe in one true, immortal and invisible God, reigning in heaven.\" This reflects the ancient Israelite heritage before the fall into idolatry.",
 
   bibliography: [
-    "History of the American Indians, by James Adair, Page 214",
-    "Genesis 30:20, 49:1, 49:13",
-    "Deuteronomy 33:1, 18-19",
-    "Hosea 8:13-14",
-    "Psalms 73:12"
+    "“History of the American Indians” by James Adair Page 214, Page 207",
+    "“Lost Tribes and Promised Lands” by Ronald Sanders page 187, 188",
+    "“Columbus to Castro” Page 422",
+    "“American Holocaust” by David E. Stannard",
+    "“Origins of the American Indians” by Lee Huton page 88",
+    "“The Three Americas: The Racial Past and Dominant Racial Factors of Their Future” by Joseph Whitney page 206",
+    "“Hebrewisms of West Africa” by Joseph Jay Williams page 189",
+    "“The Mystery of Mexican Pyramids” by Peter Tompkins page 79",
+    "“Handbook of Life of ancient Maya World” by L.V. Foster (pages 162, 66)",
+    "“Pre-Colombian Landscapes of Creation and or Origin” by John Edward Staler page 123",
+    "“Maya history and religion” by John Eric Sydney Thompson page 305",
+    "“Introduction to the Study of the Maya Hieroglyph” by Sylvanus Griswell Moley page 36",
+    "“Ancient Great Ages of Man Ancient America” (referenced for pyramid builders)",
+    "“Mysteries of the Ancient Americas” Readers Digest page 37"
   ],
   
   // Navigation

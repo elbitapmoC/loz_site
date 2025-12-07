@@ -79,18 +79,15 @@ export const benjaminTribeData: TribeData = {
   quoteDescription: "Benjamin does not whisper; he howls. Through the sonic warfare of Reggae and the spirit of the Maroons, the Wolf tears the flesh off the lies of Babylon and prepares to divide the spoil of the nations.",
 
   bibliography: [
-    "Genesis 35:18",
-    "Genesis 49:27",
-    "Deuteronomy 33:12",
-    "Isaiah 9:2",
-    "Psalms 149:6-9",
-    "Obadiah 1:15-19",
-    "Zephaniah 1:14-15",
-    "\"New Webster’s Dictionary and Thesaurus\", page 83",
-    "\"History of Slavery\", by Susan Everette",
-    "\"Nature Knows No Color Line\", by J.A Rogers (p. 123 & 130)",
-    "\"From Babylon to Timbuktu\", by Rudolph R. Windsor (p. 133)",
-    "\"Before the Mayflower\", by Lerone Bennette Junior"
+    "“Benjamin: Prophecy Fulfilled in the West Indies” (source explicitly identifies the tribe as Jamaica and the West Indies)",
+    "“From Babylon to Timbuktu” by Rudolph R. Windsor pg. 133 (Rabbi Matthew proclaiming West Indians and US blacks are original black Hebrews)",
+    "“Nature Knows No Color Line” by J.A. Rogers pg. 123 & 130 (Jews banished from Portugal settling in West Indies and being Negroid)",
+    "“New Webster's Dictionary and Thesaurus” page 83 (relevant to meanings of terms such as 'Maroons' and 'ravin')",
+    "“History of Slavery” by Susan Everette",
+    "“Before the Mayflower” by Lerone Bennette Junior",
+    "“The Mighty Tribe of Judah / Levi: The Priesthood, Prophecy, and the Haitian Division / Simeon and Levi: The Prophecies of Hispaniola” (historical context of Benjamin, Judah, and Levi sold into captivity together)",
+    "“Black Indians” by W.L. Katz pg. 33 (African (Levi) and Indian (Simeon) slaves, including Benjamin, in the 1522 rebellion on Hispaniola)",
+    "“Rabbi Abraham Ben David's Writings” (Jewish community of Granada as descendants of Judah and Benjamin, 11th-12th century AD)"
   ],
   
   // Navigation

@@ -58,12 +58,12 @@ const holyDays: HolyDay[] = [
     hebrewName: "Rosh Chodesh",
     category: "monthly",
     icon: Moon,
-    synopsis: "The New Moon is the FULL Moon - not the dark phase. Made on 4th day of creation to rule the night and be for signs and seasons. All feasts are kept according to the new moon.",
+    synopsis: "The New Moon is the dark phase with no visible light. Ordained on the 4th day to mark signs and seasons. Feasts and months are kept according to the new moon.",
     videoPlaceholder: "/videos/newmoon-explanation.mp4",
-    timing: "First day of each Hebrew month (Full Moon)",
+    timing: "First day of each Hebrew month (Dark Moon)",
     season: "Monthly",
     scriptures: ["GEN 1:14-19", "LEV 23:1-4", "PSA 81:3", "ISA 66:23"],
-    keyPoints: ["New Moon = Full Moon (not dark)", "Made 4th day for signs/seasons", "Rules the night with light", "Feasts kept by new moon timing"]
+    keyPoints: ["New Moon = dark phase (no visible light)", "Made 4th day for signs/seasons", "Marks months and feast timing", "Blow the trumpet at the new moon"]
   },
   {
     id: "passover",

@@ -246,7 +246,7 @@ export default function Overview() {
       >
         <OverviewHelper1 additionalClassNames={["mb-0"]}>
           The new moon, marking the first day of each lunar month, is understood
-          to be the full moon. It’s described as governing the night and serving
+          to be the full moon. It's described as governing the night and serving
           as a divine sign for seasons, days, and years.
         </OverviewHelper1>
         <p className="block mb-0">&nbsp;</p>

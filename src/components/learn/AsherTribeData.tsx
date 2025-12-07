@@ -69,11 +69,12 @@ The "blessing of children" (Deut 33:24) has persisted despite the devastation of
   quoteDescription: "In 1872, a stone tablet was found in Paraiba, Brazil, describing a voyage from Sidon (Asher's territory) to a 'new shore' in the 19th year of King Hiram. Authenticated by Dr. Cyrus Gordon, it stands as archaeological proof of the Israelite migration to the Americas.",
 
   bibliography: [
-    "2 Esdras 13:40-45",
-    "History of the American Indians by James Adair (p. 223, 226)",
-    "Feats and Wisdom of the Ancients (Time Life Books, p. 118)",
-    "Genesis 30:13, 49:20",
-    "Deuteronomy 33:24-25"
+    "“The Mighty Tribe of Asher: Incas of South America” (source explicitly identifies the tribe and provides lineage and location information)",
+    "“Feats and Wisdom of the Ancients” Page 118, Page 113 (references the Brazil tablet written in Phoenician/Ancient Hebrew, detailing a voyage around Africa, storm, and salvation on the shores of Brazil, and mentions other artifacts found in the Americas)",
+    "“History of the American Indians” Pages 223 and 226 (South American Indian practices similar to ancient Jews: clothing, temples resembling synagogues, mitred idols, observance of year of jubilee)",
+    "“Hebrewisms of West Africa” Page 189 (groups of Hebrew settlers or slaves, including Asher and Zebulun, lived in Carthage)",
+    "“The Quest for Origins” Page 125 (connects American Indian 'Semites' to eventual travel to Hawaii and Polynesia)",
+    "“Lost Tribes and Promised Lands” by Ronald Sanders (general reference for migration of the Ten Tribes, including Asher, to the Americas)"
   ],
   
   // Navigation

@@ -90,9 +90,16 @@ export const judahTribeData: TribeData = {
   previousTribePath: "/learn/levi",
   
   bibliography: [
-    "Code Noir",
-    "Robert Kirk, The Secret Commonwealth",
-    "Rev. Gilbert White, The Natural History of Selbourne",
-    "Memoirs of the Secret Services of John Macky"
+    "“Judah: Lineage, Prophecy, and American Captivity” (source explicitly identifies the tribe)",
+    "“From Babylon to Timbuktu” by Rudolph R. Windsor pg. 133",
+    "“Nature Knows No Color Line” by J.A. Rogers pg. 65",
+    "“Nature Knows No Color Line” by J.A. Rogers pg. 123 & 130",
+    "“Malcolm X- The End of White World Supremacy” by IMAM Benjamin Karim pg. 72",
+    "“The Oxford Illustrated History of Medieval Europe” by George Holmes pg. 11",
+    "“Lost Tribes and Promised Lands” by Ronald Sanders pg. 364",
+    "“Before the Mayflower” by Lerone Bennette Junior",
+    "“History of Slavery” by Susan Everette",
+    "“The Messiah of the Christians and the Jews held forth in a discourse” by Paul Isaiah (1655)",
+    "“New Webster's Dictionary and Thesaurus”"
   ]
 };

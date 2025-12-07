@@ -91,7 +91,12 @@ export const simeonTribeData: TribeData = {
   previousTribePath: "/learn/reuben",
   
   bibliography: [
-    "“Black Indians” by W.L. Katz pg. 33",
-    "The Hope of Israel By Menasseh Ben Israel, Pages 112-113"
+    "“Why the Cock the Cox Fight Dominicans Haitians and the Struggle for Espanola” Page 37",
+    "“Why the Cock the Cox Fight Dominicans Haitians and the Struggle for Espanola” Page 38",
+    "“Why the Cock the Cox Fight Dominicans Haitians and the Struggle for Espanola” Page 40",
+    "“Why the Cock the Cox Fight Dominicans Haitians and the Struggle for Espanola” Page 41",
+    "“A History of the Jews (or Jewish Life in Spain)” Page 211",
+    "“The Hope of Israel” Pages 112 and 113",
+    "“Lost Tribes and Promised Lands” Ronald Sanders (cited as general reference for Hispaniola containing Ten Tribes)"
   ]
 };

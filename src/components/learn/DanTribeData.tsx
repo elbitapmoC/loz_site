@@ -71,13 +71,11 @@ The explorer **Montezinos** also recorded an encounter with Seminole Indians (Re
   quoteDescription: "Friar Diego de Landa's 'Yucatan Before and After the Conquest' records natives claiming descent from those who crossed the sea on twelve roads. The explorer Montezinos heard the 'Shema Yisroel' recited by natives who identified Joseph's tribe on nearby islands.",
 
   bibliography: [
-    "Everything You Need To Know About Latino History, by Himilce Novas",
-    "American Holocaust, by David E. Stannard",
-    "Lost Tribes and Promised Lands, by Ronald Sanders",
-    "Yucatan Before and After the Conquest, by Friar Diego de Landa",
-    "Genesis 41:51-52, 48:13-20, 49:1, 22-26",
-    "Deuteronomy 33:13-17",
-    "Hosea 4:17, 7:8, 8:11-12, 9:11-14, 11:10, 12:8, 13:15-16"
+    "“Travels in North Africa” by Nahum Slousch page 145 (referencing Black-skinned population in East Sudan/Tawareq known as the Crit, observing Sabbath and of Jewish origin)",
+    "“The Jewish Encyclopedia” (reference to the Falashas/Ethiopian Jews identifying as the Tribe of Dan)",
+    "“Obadiah ben Abraham Bartender's Writings” (reference to a colony of Jews in Wagla Awa oasis, Algeria, as black as negroes and claiming relation to Dan, 1488)",
+    "“Indians of Central and South American Ethnohistoric Historical Dictionary” by James Stewart Olsen (cited for the Dani/Danites Arawak language tribe in Amazonas, Brazil)",
+    "“Hebrewisms of West Africa” by Joseph J. Williams (general reference for Jewish migration/presence in West Africa)",
   ],
   
   // Navigation

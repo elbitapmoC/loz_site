@@ -67,10 +67,19 @@ export const ephraimTribeData: TribeData = {
   quoteDescription: "Ephraim received the double portion blessing from Jacob, crossing his hands to bless the younger over the older (Manasseh). This signifies the prominent role of Ephraim in the gathering of the Northern Kingdom.",
 
   bibliography: [
-    "Genesis 48:19",
-    "Genesis 49:22-26",
-    "Hosea 7:8, 7:11, 8:12",
-    "Deuteronomy 33:13-17"
+    "“Ephraim and Manasseh: The Caribbean Israelite Lineage” (source explicitly identifies Ephraim as Puerto Ricans and Manasseh as Cubans)",
+    "“2 Esdras” Chapter 13:40-45 (cited for the migration route of the ten tribes, including Ephraim/Manasseh, to Arsareth/Americas)",
+    "“The Jewish Encyclopedia” (reference to Arsareth identified by Christopher Columbus as America, where the 10 tribes would dwell)",
+    "“Lost Tribes and Promised Lands” Ronald Sanders pages 363-365 (cited for Reuben/Joseph tribal identity confirmation and location)",
+    "“Yucatan Before and After the Conquest” Friar Diego de Landa page 8 (cited for native traditions of coming from the East via 12 sea roads, suggesting Jewish descent)",
+    "“North American Exploration” John Logan Allen page 21 (cited regarding the Yuba colony/Indians in Cuba)",
+    "“From Babylon to Timbuktu” Rudolph R Windsor page 131 (cited regarding Yuba Jews of Nigeria identifying as Benai Ephraim/Sons of Ephraim)",
+    "“American Holocaust” David E. Stannard pages 148-149 (cited regarding Spanish brutality against infants and pregnant women in the Indies)",
+    "“Everything You Need To Know About Latino History” Himilce Novas pages 143, 145, 146, 149",
+    "“500 Nations” Alvin M. Joseph Jr. page 135",
+    "“The Borgias” Marion Johnson pages 172 & 173 (cited regarding the false white image of Christ/Cesare Borgia)",
+    "“Genesis 49ers / IUIC Video Sources” (analysis of the tribe based on Deuteronomy 33:17; Genesis 49:22; Hosea 7:8)",
+    "“Compact Bible Dictionary / Latin Dictionary” (general reference material used for defining terms like 'Indios' and prophecies)"
   ],
   
   // Navigation

@@ -1,7 +1,7 @@
 import { TribeData } from "./TribePageTemplate";
 import { Wind, Flame, Map, MessageCircle } from "lucide-react";
-import naphtaliFamilyImage from "figma:asset/tribeFamilyData.png";
-import naphtaliFamilyImageWebp from "figma:asset/tribeFamilyData.webp";
+import naphtaliFamilyImage from "../../assets/tribeFamilyData.png";
+import naphtaliFamilyImageWebp from "../../assets/tribeFamilyData.webp";
 
 export const naphtaliTribeData: TribeData = {
   // Basic Info
@@ -73,10 +73,12 @@ They settled in the southern regions of the Americas, establishing a culture kno
   quoteDescription: "Deuteronomy 33:23 commands Naphtali to 'possess the west and the south.' This geographic identifier points directly to the nations of Chile (the West) and Argentina (the South), the lands where the exiles settled and multiplied.",
 
   bibliography: [
-    "Genesis 30:8, 49:21",
-    "Deuteronomy 33:23",
-    "Ezra 1:2-3",
-    "2 Esdras 13:41"
+    "“Naphtali: The Hind Let Loose in the South Seas” (source explicitly identifies the tribe and relates prophecies to its modern identity and location)",
+    "“2 Esdras” Chapter 13:40-45 (migration of the ten tribes, including Naphtali, to Arsareth/Americas, traveling to a country 'where never mankind dwelt')",
+    "“The Jewish Encyclopedia” (reference to Arsareth, identified by Christopher Columbus as America, where the ten tribes would dwell until the restoration)",
+    "“Latinos in History” by Michael Norwick (Mapuche word 'Chile' meaning 'where the land ends' or 'deepest point of the earth,' connecting to Deuteronomy 33:17)",
+    "“Jesuit in the Incas” by Sabine Hyland (Inca rulers possessing elegance and taste, relating to Naphtali 'giveth goodly words' prophecy)",
+    "“The Natural and Moral History of the Indies” by Father Jose de Costa (Incas making voyages out into the South Seas toward western islands)"
   ],
   
   // Navigation
