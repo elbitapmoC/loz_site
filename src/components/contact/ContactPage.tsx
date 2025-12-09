@@ -174,7 +174,7 @@ export function ContactPage() {
                   <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">contact@theeloz.org</p>
+                    <p className="text-sm text-muted-foreground">theelightofzion@gmail.com</p>
                   </div>
                 </div>
                 

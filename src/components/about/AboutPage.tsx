@@ -616,7 +616,7 @@ export function AboutPage() {
                         Next Service
                       </p>
                       <p className="text-foreground font-serif text-lg">
-                        Sabbath @ 11:00 AM
+                        Sabbath @ 12:00 PM
                       </p>
                     </div>
                   </div>

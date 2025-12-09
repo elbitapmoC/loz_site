@@ -39,7 +39,7 @@ const ministries = [
       "Community prayer sessions",
     ],
     contact: "streetministry@theeloz.org",
-    schedule: "Saturdays 10 AM - 2 PM",
+    schedule: "Friday (7:30 PM - 11:00 PM) & Saturdays (5 PM - 9 PM)",
   },
   {
     id: "prison-ministry",
@@ -75,7 +75,7 @@ const ministries = [
       "Community garden program",
     ],
     contact: "foodpantry@theeloz.org",
-    schedule: "Tuesdays & Fridays 11 AM - 3 PM",
+    schedule: "Wednesday (5:00 PM @ HQ)",
   },
   {
     id: "community-outreach",
@@ -147,7 +147,7 @@ const ministries = [
       "Community service projects",
     ],
     contact: "mightymen@theeloz.org",
-    schedule: "First and third Thursdays, 7 PM",
+    schedule: "Thursday (8:30 PM)",
   },
 ];
 
@@ -293,7 +293,7 @@ export function MinistriesPage() {
                   Phone: (951) 447-6305
                 </p>
                 <p className="font-medium">
-                  Email: contact@theeloz.org
+                  Email: theelightofzion@gmail.com
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
                   <em>Service Times: Saturdays 12-4 PM</em>
