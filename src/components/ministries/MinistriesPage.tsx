@@ -289,9 +289,9 @@ export function MinistriesPage() {
                 <p className="text-sm text-muted-foreground mb-2">
                   General Ministry Information
                 </p>
-                {/* <p className="font-medium">
-                  Phone: (951) 447-6305
-                </p> */}
+                <p className="font-medium">
+                  Phone: (754) 367-4052
+                </p>
                 <p className="font-medium">
                   Email: theelightofzion@gmail.com
                 </p>

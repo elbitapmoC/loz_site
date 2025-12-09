@@ -57,6 +57,11 @@ const mainLinks = [
     icon: <Heart className="h-5 w-5" />,
   },
   {
+    name: "Donate",
+    path: "/donate",
+    icon: <Heart className="h-5 w-5" />,
+  },
+  {
     name: "Music",
     path: "https://www.youtube.com/channel/UC9BS4wB8yHp6DIHUENQOSSw",
     icon: <Music className="h-5 w-5" />,
@@ -80,6 +85,11 @@ const mobileLinks = [
     name: "Learn",
     path: "/learn",
     icon: <BookOpen className="h-5 w-5" />,
+  },
+  {
+    name: "Donate",
+    path: "/donate",
+    icon: <Heart className="h-5 w-5" />,
   },
   {
     name: "Calendar",
