@@ -178,13 +178,13 @@ export function ContactPage() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
+                {/* <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Phone</p>
                     <p className="text-sm text-muted-foreground">(951) 447-6305</p>
                   </div>
-                </div>
+                </div> */}
                 
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />

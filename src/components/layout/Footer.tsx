@@ -157,12 +157,12 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-8">
-            <Link
+            {/* <Link
               to="/resources"
               className="text-foreground/40 text-xs hover:text-primary transition-colors"
             >
               Resources
-            </Link>
+            </Link> */}
             <Link
               to="/privacy"
               className="text-foreground/40 text-xs hover:text-primary transition-colors"

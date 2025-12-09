@@ -92,9 +92,9 @@ export function LocationsPage() {
                         </p>
                         <p>
                           <span className="font-medium text-foreground">
-                            Bible Study:
+                            New Moon:
                           </span>{" "}
-                          Wednesdays, 7:00 PM
+                          In general, 7:00 PM
                         </p>
                       </div>
                     </div>
@@ -102,7 +102,7 @@ export function LocationsPage() {
                 </div>
 
                 {/* Contact */}
-                <div className="space-y-2">
+                {/* <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <Phone className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                     <div>
@@ -112,7 +112,7 @@ export function LocationsPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Action Buttons */}
                 <div className="pt-4 flex flex-col sm:flex-row gap-3">
