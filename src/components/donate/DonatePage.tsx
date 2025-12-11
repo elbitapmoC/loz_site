@@ -22,7 +22,7 @@ export function DonatePage() {
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState<string>("");
   const [frequency, setFrequency] = useState<Frequency>("one_time");
-  const [coverFees, setCoverFees] = useState(false);
+  const [coverFees, setCoverFees] = useState(true);
   const [selectedMethod, setSelectedMethod] = useState<"card" | "apple" | "cash">("card");
   const currency = "usd";
   const MIN_DONATION = 5;
@@ -48,7 +48,8 @@ export function DonatePage() {
   const tooSmall = parsedAmount > 0 && parsedAmount < MIN_DONATION;
   const feePct = 0.029;
   const feeFixed = 0.3;
-  const processingFee = coverFees && parsedAmount > 0 ? (parsedAmount + feeFixed) / (1 - feePct) - parsedAmount : 0;
+  const estimatedFee = parsedAmount > 0 ? (parsedAmount + feeFixed) / (1 - feePct) - parsedAmount : 0;
+  const processingFee = coverFees ? estimatedFee : 0;
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let v = e.target.value.replace(/[^0-9.]/g, "");
@@ -169,7 +170,7 @@ export function DonatePage() {
               <div className="bg-background/40 border border-border/40 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="space-y-1">
                   <Label className="text-base font-medium">Options</Label>
-                  <p className="text-sm text-muted-foreground">Add ${processingFee.toFixed(2)} to cover processing fees</p>
+                  <p className="text-sm text-muted-foreground">Add ${estimatedFee.toFixed(2)} to cover processing fees</p>
                 </div>
                 <Button
                   type="button"
