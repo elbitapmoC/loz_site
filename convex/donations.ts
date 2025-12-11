@@ -37,6 +37,9 @@ export const createCheckoutSession = action({
     if (!secret || !appUrl) {
       throw new Error("Missing STRIPE_SECRET_KEY or APP_URL env");
     }
+    if (amountCents < 500) {
+      throw new Error("Minimum donation is $5");
+    }
     const stripe = new Stripe(secret);
 
     const feePct = 0.029;
@@ -67,6 +70,7 @@ export const createCheckoutSession = action({
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       customer_creation: "if_required",
+      payment_method_types: ["card", "cashapp"],
       line_items: lineItems,
       success_url: `${appUrl}/donate/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/donate`,

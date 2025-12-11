@@ -107,22 +107,6 @@ export function CallToAction() {
                   <ArrowRight className="h-4 w-4 ml-auto group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-
-              <Button
-                variant="secondary"
-                size="lg"
-                onClick={startDonation}
-                className="w-full justify-start gap-3 h-14 text-base font-medium group hover:scale-105 transition-all duration-200"
-              >
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Heart className="h-5 w-5 text-primary" />
-                </div>
-                <div className="text-left">
-                  <div>Donate $25</div>
-                  <div className="text-xs text-muted-foreground">Covers processing fees</div>
-                </div>
-                <ArrowRight className="h-4 w-4 ml-auto group-hover:translate-x-1 transition-transform" />
-              </Button>
             </div>
           </div>
 
