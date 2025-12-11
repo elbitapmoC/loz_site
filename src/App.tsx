@@ -285,7 +285,8 @@ const AppRoutes = () => {
 export default function App() {
   const convexUrl = (import.meta as any).env?.VITE_CONVEX_URL as string | undefined;
   const clerkPublishableKey = (import.meta as any).env?.VITE_CLERK_PUBLISHABLE_KEY as string | undefined;
-  const convexClient = new ConvexReactClient(convexUrl || "");
+  const resolvedConvexUrl = typeof convexUrl === "string" && /^https?:\/\//.test(convexUrl) ? convexUrl : "https://example.com";
+  const convexClient = new ConvexReactClient(resolvedConvexUrl);
   return (
     <ThemeProvider defaultTheme="light">
       <FontProvider>
