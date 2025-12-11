@@ -9,7 +9,7 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Badge } from "../ui/badge";
-import { DollarSign, CreditCard, Heart, ShieldCheck, Calendar, Banknote, Smartphone, CircleCheck } from "lucide-react";
+import { DollarSign, CreditCard, Heart, ShieldCheck, Calendar, Banknote, Smartphone, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -180,7 +180,7 @@ export function DonatePage() {
                 >
                   {coverFees ? (
                     <span className="flex items-center gap-2">
-                      <CircleCheck className="h-4 w-4" />
+                      <CheckCircle className="h-4 w-4" />
                       Fees Covered
                     </span>
                   ) : (
