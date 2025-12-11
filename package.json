@@ -2,7 +2,8 @@
       "name": "loz-site",
       "version": "0.1.0",
       "private": true,
-      "dependencies": {
+  "dependencies": {
+            "@clerk/clerk-react": "^5.58.1",
             "@fontsource/cormorant-garamond": "^5.2.11",
             "@fontsource/dm-mono": "^5.2.7",
             "@fontsource/outfit": "^5.2.8",
@@ -35,6 +36,7 @@
             "class-variance-authority": "^0.7.1",
             "clsx": "*",
             "cmdk": "^1.1.1",
+            "convex": "^1.30.0",
             "date-fns": "*",
             "embla-carousel-react": "^8.6.0",
             "framer-motion": "*",
@@ -47,23 +49,25 @@
             "react-dom": "^18.3.1",
             "react-hook-form": "^7.55.0",
             "react-resizable-panels": "^2.1.7",
-            "react-router-dom": "*",
+    "react-router-dom": "*",
             "recharts": "^2.15.2",
             "sonner": "^2.0.3",
+            "stripe": "^20.0.0",
             "tailwind-merge": "*",
             "vaul": "^1.1.2"
-      },
-      "devDependencies": {
+  },
+  "devDependencies": {
             "@types/node": "^20.10.0",
             "@types/react": "^19.2.7",
             "@types/react-dom": "^19.2.3",
             "@vitejs/plugin-react-swc": "^3.10.2",
             "sharp": "^0.34.5",
             "vite": "6.3.5"
-      },
-      "scripts": {
-            "dev": "vite",
-            "build": "vite build",
-            "start": "vite preview --port 4173 --strictPort"
-      }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview --port 4173 --strictPort",
+    "convex:dev": "convex dev"
+  }
 }

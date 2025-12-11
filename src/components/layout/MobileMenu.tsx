@@ -44,7 +44,7 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
   return (
     <div
       className={cn(
-        "fixed inset-0 bg-background z-40 transition-transform duration-300 md:hidden overflow-auto",
+        "fixed inset-0 bg-background z-40 transition-transform duration-300 min-[1100px]:hidden overflow-auto",
         isOpen ? "translate-y-0" : "translate-y-full"
       )}
       aria-hidden={!isOpen}

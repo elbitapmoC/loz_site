@@ -3,6 +3,7 @@ import { Navigation } from "./Navigation";
 import { Footer } from "./Footer";
 import { cn } from "../ui/utils";
 import { PageTransition } from "./PageTransition";
+import { ScrollToTop } from "./ScrollToTop";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ export function Layout({ children, className }: LayoutProps) {
       </a>
 
       <Navigation />
+      <ScrollToTop />
       
       <main 
         className={cn("flex-1 pt-16 md:pb-0 pb-20", className)}

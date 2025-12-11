@@ -28,7 +28,7 @@ interface HolyDay {
   id: string;
   name: string;
   hebrewName: string;
-  category: "weekly" | "monthly" | "spring" | "fall" | "winter";
+  category: "weekly" | "monthly" | "spring" | "summer" | "fall" | "winter";
   icon: React.ElementType;
   synopsis: string;
   videoPlaceholder: string;
@@ -95,12 +95,12 @@ const holyDays: HolyDay[] = [
     id: "firstfruits",
     name: "Feast of First Fruits",
     hebrewName: "Yom HaBikkurim",
-    category: "spring",
+    category: "summer",
     icon: Wheat,
     synopsis: "Occurs at beginning of wheat harvest. Pentecost (50th day) fulfills this feast - Holy Spirit came upon Christ's followers in Acts 2. Christ is the firstfruits of resurrection.",
     videoPlaceholder: "/videos/firstfruits-explanation.mp4",
     timing: "50th day after Sabbath (Pentecost)",
-    season: "Spring",
+    season: "Summer",
     scriptures: ["LEV 23:15-22", "ACT 2:1-4", "1COR 15:20-23"],
     keyPoints: ["Count 50 days (Pentecost)", "Holy Spirit outpouring", "Christ as firstfruits", "Thanksgiving for harvest"]
   },

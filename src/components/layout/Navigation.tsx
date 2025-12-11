@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../ui/utils";
+import { Button } from "../ui/button";
 import { ModeToggle } from "./ModeToggle";
 import { useTheme } from "../providers/ThemeProvider";
 import { Dock } from "../ui/dock";
@@ -27,8 +28,10 @@ import {
   ListTree,
   Moon,
   MapPin,
+  LogIn,
 } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 interface NavigationProps {
   className?: string;
@@ -82,25 +85,14 @@ const mobileLinks = [
     icon: <Home className="h-5 w-5" />,
   },
   {
-    name: "Learn",
-    path: "/learn",
+    name: "About",
+    path: "/about",
     icon: <BookOpen className="h-5 w-5" />,
-  },
-  {
-    name: "Donate",
-    path: "/donate",
-    icon: <Heart className="h-5 w-5" />,
   },
   {
     name: "Calendar",
     path: "/calendar",
     icon: <Calendar className="h-5 w-5" />,
-  },
-  {
-    name: "Music",
-    path: "https://www.youtube.com/channel/UC9BS4wB8yHp6DIHUENQOSSw",
-    icon: <Headphones className="h-5 w-5" />,
-    external: true,
   },
   {
     name: "More",
@@ -178,6 +170,28 @@ const mobileMenuCategories = [
       },
     ],
   },
+  {
+    title: "Actions",
+    icon: <Menu className="h-5 w-5" />,
+    links: [
+      {
+        name: "Donate",
+        path: "/donate",
+        icon: <Heart className="h-5 w-5" />,
+      },
+      {
+        name: "Music",
+        path: "https://www.youtube.com/channel/UC9BS4wB8yHp6DIHUENQOSSw",
+        icon: <Headphones className="h-5 w-5" />,
+        external: true,
+      },
+      {
+        name: "Sign In",
+        path: "/signin",
+        icon: <LogIn className="h-5 w-5" />,
+      }
+    ],
+  },
 ];
 
 export function Navigation({ className }: NavigationProps) {
@@ -185,6 +199,9 @@ export function Navigation({ className }: NavigationProps) {
   const { isDark, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isAbove1100, setIsAbove1100] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 1100 : true
+  );
 
   // Optimize scroll listener with requestAnimationFrame
   useEffect(() => {
@@ -209,6 +226,20 @@ export function Navigation({ className }: NavigationProps) {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const update = () => setIsAbove1100(window.innerWidth >= 1100);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  useEffect(() => {
+    if (isAbove1100 && isOpen) {
+      document.body.style.overflow = "auto";
+      setIsOpen(false);
+    }
+  }, [isAbove1100, isOpen]);
 
   // Handle opening of the mobile menu
   const handleMenuOpen = useCallback(() => {
@@ -261,79 +292,88 @@ export function Navigation({ className }: NavigationProps) {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav
-              className="hidden md:flex items-center space-x-8"
-              aria-label="Main Navigation"
-            >
-              <div className="flex space-x-1 lg:space-x-2">
-                {mainLinks.map((link) => {
-                  if (link.external) {
+            {isAbove1100 && (
+              <nav
+                className="flex flex-1 justify-center"
+                aria-label="Main Navigation"
+              >
+                <div className="flex space-x-1 lg:space-x-2">
+                  {mainLinks.map((link) => {
+                    if (link.external) {
+                      return (
+                        <a
+                          key={link.path}
+                          href={link.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(
+                            "relative px-3 py-2 rounded-md font-medium text-sm transition-all duration-300",
+                            scrolled ? "py-1.5" : "py-2",
+                            "text-foreground/70 hover:text-primary hover:bg-primary/5",
+                          )}
+                        >
+                          <span className="relative z-10">{link.name}</span>
+                        </a>
+                      );
+                    }
+
                     return (
-                      <a
+                      <Link
                         key={link.path}
-                        href={link.path}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        to={link.path}
                         className={cn(
                           "relative px-3 py-2 rounded-md font-medium text-sm transition-all duration-300",
                           scrolled ? "py-1.5" : "py-2",
-                          "text-foreground/70 hover:text-primary hover:bg-primary/5",
+                          location.pathname === link.path
+                            ? "text-primary"
+                            : "text-foreground/70 hover:text-primary hover:bg-primary/5",
                         )}
+                        aria-current={
+                          location.pathname === link.path ? "page" : undefined
+                        }
                       >
-                        <span className="relative z-10">
-                          {link.name}
-                        </span>
-                      </a>
+                        <span className="relative z-10">{link.name}</span>
+                        {location.pathname === link.path && (
+                          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full" />
+                        )}
+                      </Link>
                     );
-                  }
+                  })}
+                </div>
+              </nav>
+            )}
 
-                  return (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className={cn(
-                        "relative px-3 py-2 rounded-md font-medium text-sm transition-all duration-300",
-                        scrolled ? "py-1.5" : "py-2",
-                        location.pathname === link.path
-                          ? "text-primary"
-                          : "text-foreground/70 hover:text-primary hover:bg-primary/5",
-                      )}
-                      aria-current={
-                        location.pathname === link.path
-                          ? "page"
-                          : undefined
-                      }
-                    >
-                      <span className="relative z-10">
-                        {link.name}
-                      </span>
-                      {location.pathname === link.path && (
-                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full" />
-                      )}
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <div className="flex items-center space-x-3 pl-2 border-l border-border">
+            {isAbove1100 && (
+              <div className="flex items-center space-x-3 border-border">
                 <ModeToggle />
+                <div className="flex items-center space-x-2">
+                  <SignedOut>
+                    <Button size="sm" variant="outline" asChild>
+                      <Link to="/signin">Sign in</Link>
+                    </Button>
+                  </SignedOut>
+                  <SignedIn>
+                    <UserButton appearance={{ elements: { userButtonAvatarBox: "w-8 h-8" } }} />
+                  </SignedIn>
+                  <Button size="sm" className="bg-primary" asChild>
+                    <Link to="/donate">Donate</Link>
+                  </Button>
+                </div>
               </div>
-            </nav>
+            )}
           </div>
         </div>
       </header>
 
-      {/* Mobile Dock Navigation */}
       <AnimatePresence>
-        <motion.div
-          className="md:hidden"
-          initial={false}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <Dock>
-            {mobileLinks.map((link) => {
+        {!isAbove1100 && (
+          <motion.div
+            initial={false}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Dock>
+              {mobileLinks.map((link) => {
               if (link.path === "#more") {
                 return (
                   <button
@@ -390,52 +430,52 @@ export function Navigation({ className }: NavigationProps) {
                   />
                 </Link>
               );
-            })}
+              })}
 
-            {/* Theme toggle in dock */}
-            <button
-              onClick={handleThemeToggle}
-              className="block focus:outline-none focus:ring-2 focus:ring-primary rounded-full"
-              aria-label={
-                isDark
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
-              }
-            >
-              <Dock.Item
-                icon={
-                  isDark ? (
-                    <motion.div
-                      className="relative"
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Sun className="h-5 w-5 text-primary" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      className="relative"
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Moon className="h-5 w-5 text-primary" />
-                    </motion.div>
-                  )
+              <button
+                onClick={handleThemeToggle}
+                className="block focus:outline-none focus:ring-2 focus:ring-primary rounded-full"
+                aria-label={
+                  isDark
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
                 }
-                label={isDark ? "Light Mode" : "Dark Mode"}
-                isActive={false}
-              />
-            </button>
-          </Dock>
-        </motion.div>
+              >
+                <Dock.Item
+                  icon={
+                    isDark ? (
+                      <motion.div
+                        className="relative"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.8, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Sun className="h-5 w-5 text-primary" />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        className="relative"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.8, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Moon className="h-5 w-5 text-primary" />
+                      </motion.div>
+                    )
+                  }
+                  label={isDark ? "Light Mode" : "Dark Mode"}
+                  isActive={false}
+                />
+              </button>
+            </Dock>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       <MobileMenu
-        isOpen={isOpen}
+        isOpen={isOpen && !isAbove1100}
         onClose={handleMenuClose}
         categories={mobileMenuCategories}
       />

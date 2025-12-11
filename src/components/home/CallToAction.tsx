@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useConvex } from "convex/react";
 import { Button } from "../ui/button";
 import {
   ArrowRight,
@@ -11,6 +12,21 @@ import {
 import { NewsletterSubscription } from "../newsletter/NewsletterSubscription";
 
 export function CallToAction() {
+  const convex = useConvex();
+
+  const startDonation = async () => {
+    try {
+      const result = await convex.action("donations:createCheckoutSession", {
+        amountCents: 2500,
+        coverFees: true,
+      });
+      if (result?.url) {
+        window.location.href = result.url;
+      }
+    } catch (e) {
+      console.error("Failed to start donation checkout", e);
+    }
+  };
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background Pattern */}
@@ -91,6 +107,22 @@ export function CallToAction() {
                   <ArrowRight className="h-4 w-4 ml-auto group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
+
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={startDonation}
+                className="w-full justify-start gap-3 h-14 text-base font-medium group hover:scale-105 transition-all duration-200"
+              >
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <Heart className="h-5 w-5 text-primary" />
+                </div>
+                <div className="text-left">
+                  <div>Donate $25</div>
+                  <div className="text-xs text-muted-foreground">Covers processing fees</div>
+                </div>
+                <ArrowRight className="h-4 w-4 ml-auto group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
           </div>
 

@@ -90,10 +90,10 @@ export function CalendarDashboard() {
                     <div className="text-sm font-medium text-muted-foreground">
                       Next Special Event
                     </div>
-                    <div className="font-medium text-4xl">
+                    <div className="text-4xl">
                       {nextEvent.title}
                     </div>
-                    <div className="text-xl font-bold text-primary">
+                    <div className="text-xl text-primary">
                       {format(
                         new Date(nextEvent.date + "T12:00:00"),
                         "MMM d"

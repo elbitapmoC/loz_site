@@ -15,7 +15,9 @@ import { ErrorBoundary } from "./components/layout/ErrorBoundary";
 // Providers and UI
 import { FontProvider } from "./components/providers/FontProvider";
 import { ThemeProvider } from "./components/providers/ThemeProvider";
-import { AuthProvider } from "./components/auth/AuthContext";
+import { ClerkProvider } from "@clerk/clerk-react";
+import { ConvexProvider, ConvexReactClient } from "convex/react";
+import { useAuth as useClerkAuth } from "@clerk/clerk-react";
 import { Toaster } from "./components/ui/sonner";
 
 // Helper to lazily load named exports
@@ -35,6 +37,8 @@ const AboutPage = lazyImport(() => import("./components/about/AboutPage"), "Abou
 const MinistriesPage = lazyImport(() => import("./components/ministries/MinistriesPage"), "MinistriesPage");
 const ContactPage = lazyImport(() => import("./components/contact/ContactPage"), "ContactPage");
 const ResourcesPage = lazyImport(() => import("./components/resources/ResourcesPage"), "ResourcesPage");
+const DonatePage = lazyImport(() => import("./components/donate/DonatePage"), "DonatePage");
+const DonateSuccessPage = lazyImport(() => import("./components/donate/DonateSuccessPage"), "DonateSuccessPage");
 
 // Learn Section Pages
 const TwelveTribesPage = lazyImport(() => import("./components/learn/TwelveTribesPage"), "TwelveTribesPage");
@@ -80,10 +84,12 @@ const AppRoutes = () => {
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/donate" element={<DonatePage />} />
+          <Route path="/donate/success" element={<DonateSuccessPage />} />
 
           {/* Auth Routes */}
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin/*" element={<SignInPage />} />
+          <Route path="/signup/*" element={<SignUpPage />} />
 
           
 
@@ -277,16 +283,21 @@ const AppRoutes = () => {
 
 // Main App Component
 export default function App() {
+  const convexUrl = (import.meta as any).env?.VITE_CONVEX_URL as string | undefined;
+  const clerkPublishableKey = (import.meta as any).env?.VITE_CLERK_PUBLISHABLE_KEY as string | undefined;
+  const convexClient = new ConvexReactClient(convexUrl || "");
   return (
     <ThemeProvider defaultTheme="light">
       <FontProvider>
-        <AuthProvider>
-          <BrowserRouter>
-            <ScrollToTop />
-            <Toaster />
-            <AppRoutes />
-          </BrowserRouter>
-        </AuthProvider>
+        <ClerkProvider publishableKey={clerkPublishableKey!}>
+          <ConvexProvider client={convexClient} useAuth={useClerkAuth}>
+            <BrowserRouter>
+              <ScrollToTop />
+              <Toaster />
+              <AppRoutes />
+            </BrowserRouter>
+          </ConvexProvider>
+        </ClerkProvider>
       </FontProvider>
     </ThemeProvider>
   );

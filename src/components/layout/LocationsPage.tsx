@@ -4,9 +4,21 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { MapPin, Phone, Clock, Mail, Navigation, Calendar, Shield } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Clock,
+  Mail,
+  Navigation,
+  Calendar,
+  Monitor,
+  Shield,
+} from "lucide-react";
 
 export function LocationsPage() {
+  const liveUrl = "https://www.youtube.com/@TheeLightofZion";
+  const directionsUrl =
+    "https://www.google.com/maps/search/?api=1&query=2937+W+Broward+Blvd+Fort+Lauderdale+FL+33312";
   return (
     <div className="min-h-[70vh] flex items-center justify-center pt-24 pb-24">
       <div className="container mx-auto px-4 relative z-10">
@@ -17,9 +29,7 @@ export function LocationsPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <Badge className="mb-4 text-sm px-4 py-1">
-            Many Locations to Serve You
-          </Badge>
+          <Badge className="mb-4 text-sm px-4 py-1">Here to Serve You</Badge>
           <h1 className="text-4xl md:text-5xl font-serif mb-4">Visit Us</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Join us for worship, fellowship, and learning at either of our{" "}
@@ -29,178 +39,176 @@ export function LocationsPage() {
         </motion.div>
 
         {/* Location Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
-          {/* HQ Location */}
+        <div className="max-w-4xl mx-auto mb-12">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="h-full border-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-              {/* Headquarters Badge */}
-              <div className="absolute top-4 right-4 z-20">
-                <Badge className="bg-amber-500 dark:bg-amber-400 text-amber-950 shadow-lg">
-                  HQ
-                </Badge>
-              </div>
-
-              {/* Decorative gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <CardHeader className="relative">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-serif mb-1">
-                      Fort Lauderdale HQ
-                    </h2>
-                    <p className="text-sm text-muted-foreground">
-                      Main Congregation
-                    </p>
-                  </div>
-                </div>
-              </CardHeader>
-
-              <CardContent className="space-y-6 relative">
-                {/* Address */}
-                <div className="space-y-2">
-                  <div className="flex items-start gap-3">
-                    <Navigation className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">2937 W Broward Blvd</p>
-                      <p className="text-sm text-muted-foreground">
-                        Fort Lauderdale, FL 33312
-                      </p>
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-all duration-300">
+              <CardContent className="grid grid-cols-1 md:grid-cols-2">
+                {/* Left Panel: Location Info */}
+                <div className="p-6 md:p-8 bg-muted/5 flex flex-col justify-between md:border-b-0 md:border-r">
+                  <div className="space-y-6">
+                    <div className="flex items-start justify-between">
+                      <div className="p-3 bg-primary/10 rounded-xl">
+                        <MapPin className="w-8 h-8 text-primary" />
+                      </div>
                     </div>
-                  </div>
-                </div>
 
-                {/* Service Times */}
-                <div className="space-y-2">
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div className="space-y-1">
-                      <p className="font-medium">Service Times</p>
-                      <div className="text-sm text-muted-foreground space-y-0.5">
-                        <p>
-                          <span className="font-medium text-foreground">
-                            Sabbath Service:
-                          </span>{" "}
-                          Saturdays, 12:00 PM
-                        </p>
-                        <p>
-                          <span className="font-medium text-foreground">
-                            New Moon:
-                          </span>{" "}
-                          In general, 7:00 PM
-                        </p>
+                    <div>
+                      <h2 className="text-2xl font-serif mb-1">
+                        Fort Lauderdale
+                      </h2>
+                      <p className="text-muted-foreground">Main Congregation</p>
+                    </div>
+
+                    <div className="space-y-4 text-sm">
+                      <div className="flex gap-3">
+                        <Navigation className="w-5 h-5 text-muted-foreground shrink-0" />
+                        <div>
+                          <p className="font-medium">2937 W Broward Blvd</p>
+                          <p className="text-muted-foreground">
+                            Fort Lauderdale, FL 33312
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3">
+                        <Phone className="w-5 h-5 text-muted-foreground shrink-0" />
+                        <div>
+                          <p className="font-medium">(754) 367-4052</p>
+                          <p className="text-muted-foreground">Main Office</p>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3">
+                        <Clock className="w-5 h-5 text-muted-foreground shrink-0" />
+                        <div>
+                          <p className="font-medium">Service Times</p>
+                          <p className="text-muted-foreground">
+                            Sabbath: Sat @ 12:00 PM
+                          </p>
+                          <p className="text-muted-foreground">
+                            New Moon: 7:00 PM
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <div className="pt-8">
+                    <Button asChild className="w-full">
+                      <a
+                        href={directionsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MapPin className="w-4 h-4 mr-2" />
+                        Get Directions
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
-                {/* Contact */}
-                {/* <div className="space-y-2">
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">(954) 555-TLOZ</p>
-                      <p className="text-sm text-muted-foreground">
-                        Main Office
-                      </p>
-                    </div>
-                  </div>
-                </div> */}
+                {/* Right Panel: Weekly Schedule */}
+                <div className="p-6 md:p-8 bg-card relative">
 
-                {/* Action Buttons */}
-                <div className="pt-4 flex flex-col sm:flex-row gap-3">
-                  <Button asChild className="flex-1">
-                    <a
-                      href="https://www.google.com/maps/search/?api=1&query=2937+W+Broward+Blvd+Fort+Lauderdale+FL+33312"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-6">
+                      <Calendar className="w-5 h-5 text-primary" />
+                      <h3 className="text-xl font-serif">Weekly Line-Up</h3>
+                    </div>
 
-          {/* Other Location */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Card className="h-full border-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="space-y-3">
+                      {[
+                        {
+                          day: "Sunday",
+                          title: "Life or Death Radio",
+                          time: "8:00 PM",
+                          type: "online",
+                        },
+                        {
+                          day: "Monday",
+                          title: "Big Deal Mondays",
+                          time: "8:00 PM",
+                          type: "online",
+                        },
+                        {
+                          day: "Tuesday",
+                          title: "Breakdown Tuesdays",
+                          time: "8:00 PM",
+                          type: "online",
+                        },
+                        {
+                          day: "Wednesday",
+                          title: "Wisdom Wednesdays",
+                          time: "7:00 PM",
+                          type: "online",
+                        },
+                        {
+                          day: "Thursday",
+                          title: "Soldiers Class",
+                          time: "8:00 PM",
+                          type: "private",
+                        },
+                        {
+                          day: "Friday",
+                          title: "New Testament",
+                          time: "8:00 PM",
+                          type: "online",
+                        },
+                        {
+                          day: "Saturday",
+                          title: "Shabbat Portion (Torah)",
+                          time: "12:00 PM",
+                          type: ["in-person", "online"],
+                        },
+                      ].map((item, i) => (
+                        <div
+                          key={i}
+                          className="flex flex-wrap items-start md:items-center gap-3 md:gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors border border-transparent hover:border-border/50"
+                        >
+                          <div className="w-20 sm:w-24 shrink-0">
+                            <p className="font-medium text-sm text-foreground">
+                              {item.day}
+                            </p>
+                          </div>
 
-              <CardHeader className="relative">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Calendar className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-serif mb-1">Weekly Line-Up</h2>
-                    <p className="text-sm text-muted-foreground">Schedule</p>
-                  </div>
-                </div>
-              </CardHeader>
-
-              <CardContent className="space-y-6 relative">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Sunday:</p>
-                      <p className="text-sm text-muted-foreground">Live or Death Radio</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Monday:</p>
-                      <p className="text-sm text-muted-foreground">Big Deal Mondays</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Tuesday:</p>
-                      <p className="text-sm text-muted-foreground">Breakdown Tuesdays</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Wednsday:</p>
-                      <p className="text-sm text-muted-foreground">Wisdom Wednsdays</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Thursday:</p>
-                      <p className="text-sm text-muted-foreground">Soldiers Class</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Friday:</p>
-                      <p className="text-sm text-muted-foreground">New Testament</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-foreground">Saturday:</p>
-                      <p className="text-sm text-muted-foreground">Shabbat Portion (Torah)</p>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <p className="text-sm font-medium text-foreground truncate">
+                                {item.title}
+                              </p>
+                              {(Array.isArray(item.type) ? item.type.includes("in-person") : item.type === "in-person") && (
+                                <Badge
+                                  variant="secondary"
+                                  className="hidden sm:inline-flex text-[10px] h-5 px-1.5 bg-primary/10 text-primary"
+                                >
+                                  In Person
+                                </Badge>
+                              )}
+                            </div>
+                            <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs text-muted-foreground mt-1 md:mt-0.5">
+                              <span>{item.time}</span>
+                              <span className="opacity-30">|</span>
+                              
+                              {(Array.isArray(item.type) ? item.type.includes("online") : item.type === "online") && (
+                                <a
+                                  href={liveUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                                  aria-label={`Watch ${item.title} live`}
+                                >
+                                  <Monitor className="w-3 h-3" />
+                                  <span className="leading-none">Watch</span>
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -220,7 +228,11 @@ export function LocationsPage() {
               <div className="flex items-center justify-center gap-3 text-center">
                 <Shield className="w-5 h-5 text-primary" />
                 <p className="text-sm md:text-base text-muted-foreground">
-                  <span className="font-medium text-foreground">We have soldiers</span> in West Palm Beach, Lee County, Miami-Dade County, Broward County and more to come (MHW)
+                  <span className="font-medium text-foreground">
+                    We have soldiers
+                  </span>{" "}
+                  in West Palm Beach, Lee County, Miami-Dade County, Broward
+                  County and more to come (MHW)
                 </p>
               </div>
             </CardContent>
@@ -352,8 +364,8 @@ export function LocationsPage() {
                     <div className="bg-muted/50 rounded-lg space-y-2 p-4">
                       <p className="text-sm font-medium">Head Covering:</p>
                       <p className="text-xs text-muted-foreground">
-                        EVERY man MUST have the crown of his head uncovered
-                        during ANY/ALL Services.
+                        EVERY man MUST have his head uncovered during ANY/ALL
+                        Services.
                       </p>
                       <div className="text-xs space-y-1 pt-2 border-t border-border/50">
                         <p className="font-mono">
@@ -398,8 +410,8 @@ export function LocationsPage() {
                     <div className="bg-muted/50 rounded-lg space-y-2 p-4">
                       <p className="text-sm font-medium">Head Covering:</p>
                       <p className="text-xs text-muted-foreground">
-                        Sisters must have their crown of the head completely
-                        covered during ANY/ALL Services.
+                        Sisters must have their head completely covered during
+                        ANY/ALL Services.
                       </p>
                       <div className="text-xs space-y-1 pt-2 border-t border-border/50">
                         <p className="font-mono">
