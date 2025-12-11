@@ -117,3 +117,21 @@ export const markDonationSucceeded = internalMutation({
     }
   },
 });
+
+export const getDonationStatusBySession = query({
+  args: { stripeSessionId: v.string() },
+  handler: async (ctx, { stripeSessionId }) => {
+    const donation = await ctx.db
+      .query("donations")
+      .withIndex("by_session", (q) => q.eq("stripeSessionId", stripeSessionId))
+      .first();
+    
+    // Verify caller owns this donation
+    const identity = await ctx.auth.getUserIdentity();
+    if (donation && identity && donation.clerkUserId !== identity.subject) {
+      return null; // or throw new Error("Unauthorized")
+    }
+    
+    return donation;
+  },
+});
